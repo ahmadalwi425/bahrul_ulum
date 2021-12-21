@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+    return view('admin.adminDashboard');
 });
 
 Auth::routes();

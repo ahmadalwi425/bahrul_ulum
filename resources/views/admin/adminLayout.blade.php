@@ -115,9 +115,9 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/user')}}">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
         <i class="ni ni-single-02 text-yellow"></i>
-        <span class="nav-link-text">User</span>
+        <span class="nav-link-text">Siswa</span>
       </a>
     </li>
     <li class="nav-item">
