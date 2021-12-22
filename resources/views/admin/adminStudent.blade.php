@@ -12,6 +12,7 @@
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
                   <a href="{{url('/admin')}}"><i class="fa fa-home text-primary"></i> Dashboard</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Siswa</li>
               </ol>
             </nav>
           </div>
@@ -56,6 +57,7 @@
                     <th scope="col" class="sort" data-sort="name">Nama</th>
                     <th scope="col" class="sort" data-sort="completion">Alamat</th>
                     <th scope="col" class="sort" data-sort="completion">Jenis Kelamin</th>
+                    <th scope="col" class="sort" data-sort="completion">Aksi</th>
                   </tr>
                 </thead>
                 <tbody class="list">                    
@@ -65,6 +67,25 @@
                         <td>{{$row->siswa_nama}}</td>
                         <td>{{$row->siswa_alamat}}</td>
                         <td>{{$row->siswa_jenis_kelamin}}</td>
+                        <td>
+                      <a href="{{ url('admin/siswa/detail',$row->id) }}" class="badge badge-dot mr-4">
+                        <button class="btn btn-warning" type="button"><i class="ni ni-ruler-pencil text-white mt--2 mr-3"></i> Edit</button>
+                      </a>
+                      <span class="badge badge-dot mr-4">
+                        <a class="btn btn-danger" href="{{ url('admin/buletin/destroy',$row->id) }}" onclick="del(event);">
+                          <div class="row justify-content-center align-items-center">
+                            <div class="col-1">
+                              <i class="ni ni-fat-remove text-white mt--4 ml--3 text-xl"></i> 
+                            </div>
+                            <div class="col-6">
+                              <span class="ml--3">
+                                Delete
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </span>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>

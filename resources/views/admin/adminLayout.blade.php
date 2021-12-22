@@ -120,7 +120,7 @@
         <span class="nav-link-text">Siswa</span>
       </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="{{url('admin')}}/buletin">
         <i class="ni ni-books text-green"></i>
         <span class="nav-link-text">Buletin</span>
@@ -181,7 +181,7 @@
         <i class="ni ni-single-02 text-yellow"></i>
         <span class="nav-link-text">User</span>
       </a>
-    </li>
+    </li> -->
     
     </ul>
         </div>
