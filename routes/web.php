@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('admin.adminDashboard');
+});
 
 Auth::routes();
 
@@ -26,3 +29,4 @@ Route::get('/admin/pendaftaran/diterima/{id}', [App\Http\Controllers\adminContro
 Route::get('/admin/pendaftaran/ditolak/{id}', [App\Http\Controllers\adminController::class, 'daftarTolak']);
 Route::get('/admin/pendaftaran', [App\Http\Controllers\adminController::class, 'pendaftaran']);
 Route::get('/admin/siswa', [App\Http\Controllers\adminController::class, 'siswa']);
+Route::get('/admin/siswa/detail', [App\Http\Controllers\adminController::class, 'siswaDetail']);

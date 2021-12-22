@@ -138,6 +138,11 @@ class adminController extends Controller
     public function siswa()
     {
         $data = siswa::get();
-        return view('admin.siswa',compact('data'));
+        return view('admin.adminStudent',compact('data'));
+    }
+    public function siswaDetail()
+    {
+        $data = siswa::get();
+        return view('admin.adminStudentDetail',compact('data'));
     }
 }
