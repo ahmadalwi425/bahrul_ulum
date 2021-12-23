@@ -113,7 +113,7 @@ class pendaftaranController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -147,6 +147,8 @@ class pendaftaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        pendaftaran::find($id)->delete();
+        return redirect('pendaftaran')
+            ->with('Sukses, data pendaftar berhasil dihapus');
     }
 }

@@ -44,9 +44,20 @@ class adminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showPendaftaran($id)
     {
-        //
+        pendaftaran::where('id',$id)->first();
+        return view('admin.detailPendaftaran');
+    }
+    public function showSiswa($id)
+    {
+        pendaftaran::where('id',$id)->first();
+        return view('admin.detailSiswa');
+    }
+    public function hapusSiswa($id)
+    {
+        siswa::find($id)->delete();
+        return redirect('admin/siswa');
     }
 
     /**
