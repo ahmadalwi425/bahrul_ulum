@@ -33,3 +33,5 @@ Route::get('/admin/pendaftaran/ditolak/{id}', [App\Http\Controllers\adminControl
 Route::get('/admin/pendaftaran', [App\Http\Controllers\adminController::class, 'pendaftaran']);
 Route::get('/admin/siswa', [App\Http\Controllers\adminController::class, 'siswa']);
 Route::get('/admin/siswa/detail', [App\Http\Controllers\adminController::class, 'siswaDetail']);
+Route::get('/admin/siswa/export', [App\Http\Controllers\adminController::class, 'exportSiswa']);
+Route::post('/admin/siswa/import', [App\Http\Controllers\adminController::class, 'importSiswa']);

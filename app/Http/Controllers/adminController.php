@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\pendaftaran;
 use App\Models\siswa;
+use App\Imports\siswaImport;
+use App\Exports\siswaExport;
+use Maatwebsite\Excel\Facades\Excel;
 class adminController extends Controller
 {
     /**
@@ -12,6 +15,11 @@ class adminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -58,6 +66,17 @@ class adminController extends Controller
     {
         siswa::find($id)->delete();
         return redirect('admin/siswa');
+    }
+
+    public function exportSiswa() 
+    {
+        return Excel::download(new siswaExport, 'data_siswa.xlsx');
+    }
+
+    public function importSiswa() 
+    {
+        Excel::import(new siswaImport,request()->file('file'));
+        return back();
     }
 
     /**
@@ -156,4 +175,5 @@ class adminController extends Controller
         $data = siswa::get();
         return view('admin.adminStudentDetail',compact('data'));
     }
+
 }
