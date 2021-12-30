@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
   {{-- <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css"> --}}
   <!-- Page plugins -->
-
+  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Own CSS -->
   <link rel="stylesheet" href="{{asset('css/adminCss.css')}}">
 
@@ -99,7 +99,7 @@
       <!-- Brand -->
       <div class="pt-4 pb-5 mb-3 sidenav-header  align-items-center">
         <a class="avatar avatar-lg rounded-circle" href="javascript:void(0)">
-          <img src="{{asset('storage/img/default.png')}}" class="" alt="...">
+            <img src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
         </a>
       </div>
       <div class="navbar-inner">
@@ -118,6 +118,18 @@
       <a class="nav-link" href="{{url('admin/siswa')}}">
         <i class="ni ni-single-02 text-yellow"></i>
         <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-white"></i>
+        <span class="nav-link-text">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
       </a>
     </li>
     <!-- <li class="nav-item">
@@ -208,7 +220,7 @@
                   <span aria-hidden="true">×</span>
                 </button>
               </form> --}}
-              <h1 class="d-none d-lg-inline text-white">BIG DATA BEM KBM IT-PLN</h1>
+              <h1 class="d-none d-lg-inline text-white">Pondok Pesantren Bahrul Ulum Tajinan</h1>
               <!-- Navbar links -->
               <ul class="navbar-nav align-items-center ml-12 ml-md-auto ">
                 <li class="nav-item d-xl-none">
@@ -323,9 +335,9 @@
               <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
                 <li class="nav-item dropdown">
                   <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="media align-items-center">
+                  <div class="media align-items-center">
                       <span class="avatar avatar-sm rounded-circle">
-                        <img alt="Image placeholder" src="default.png">
+                          <img src="{{asset('storage/img/user.png') }}" alt="Card image cap">
                       </span>
                       <div class="media-body  ml-2  d-none d-lg-block">
                         <span class="mb-0 text-sm  font-weight-bold"></span>
@@ -334,7 +346,7 @@
                   </a>
                   <div class="dropdown-menu  dropdown-menu-right ">
                     <div class="dropdown-header noti-title">
-                      <h6 class="text-overflow m-0">Welcome!</h6>
+                      <h6 class="text-overflow m-0">Welcome {{Auth::user()->username}}!</h6>
                     </div>
                     <a href="{{ url('admin/user') }}" class="dropdown-item">
                       <i class="ni ni-single-02"></i>

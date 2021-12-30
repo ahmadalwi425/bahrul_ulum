@@ -4,15 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\lembaga;
 
-class pendaftaran extends Model
+class berita extends Model
 {
     use HasFactory;
-    protected $table = 'pendaftaran';
+    protected $table = 'berita';
     protected $guarded = [];
     public $timestamps = false;
-    public function lembaga(){
-        return $this->belongsTo(lembaga::class, 'id_lembaga');
-    }
 }

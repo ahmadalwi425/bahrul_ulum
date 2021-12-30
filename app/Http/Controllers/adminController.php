@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\pendaftaran;
 use App\Models\siswa;
+use App\Models\menu;
+use App\Models\lembaga;
+use App\Models\data_ortu;
 use App\Imports\siswaImport;
 use App\Exports\siswaExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -151,6 +154,10 @@ class adminController extends Controller
             'siswa_media_sosial'=> $data->pendaftaran_media_sosial,
             'lembaga_id'=> $data->lembaga_id,
         ]);
+        $datasiswa = siswa::orderBy('id','desc')->first();
+        $data_ortu = data_ortu::create([
+            'siswa_id'=>$datasiswa->id,
+        ]);
         return redirect('admin/pendaftaran');
     }
     public function daftarTolak($id)
@@ -163,17 +170,56 @@ class adminController extends Controller
     public function pendaftaran()
     {
         $data = pendaftaran::get()->sortBy('pendaftaran_status');
-        return view('admin.pendaftaran',compact('data'));
+        $jumlahrequest = pendaftaran::where('pendaftaran_status','diminta')->get()->count();
+        return view('admin.adminPendaftaran',compact('data','jumlahrequest'));
     }
     public function siswa()
     {
         $data = siswa::get();
         return view('admin.adminStudent',compact('data'));
     }
-    public function siswaDetail()
+    public function siswaDetail($id)
     {
-        $data = siswa::get();
+        $data = siswa::where('id',$id)->first();
         return view('admin.adminStudentDetail',compact('data'));
     }
+    public function siswaUpdate(Request $request,$id)
+    {
+        $data = siswa::where('id',$id)->first();
+        $data->siswa_no_kk= $request->siswa_no_kk;
+        $data->siswa_nisn= $request->siswa_nisn;
+        $data->siswa_no_kip= $request->siswa_no_kip;
+        $data->siswa_nama= $request->siswa_nama;
+        $data->siswa_jenis_kelamin= $request->siswa_jenis_kelamin;
+        $data->siswa_tempat_lahir= $request->siswa_tempat_lahir;
+        $data->siswa_tanggal_lahir= $request->siswa_tanggal_lahir;
+        $data->siswa_alamat= $request->siswa_alamat;
+        $data->siswa_kelurahan= $request->siswa_kelurahan;
+        $data->siswa_provinsi= $request->siswa_provinsi;
+        $data->siswa_kota= $request->siswa_kota;
+        $data->siswa_kecamatan= $request->siswa_kecamatan;
+        $data->siswa_kode_pos= $request->siswa_kode_pos;
+        $data->siswa_agama= $request->siswa_agama;
+        $data->siswa_no_hp= $request->siswa_no_hp;
+        $data->siswa_anak_ke= $request->siswa_anak_ke;
+        $data->siswa_jumlah_saudara= $request->siswa_jumlah_saudara;
+        $data->siswa_status_tempat_tinggal= $request->siswa_status_tempat_tinggal;
+        $data->siswa_pembiaya= $request->siswa_pembiaya;
+        $data->siswa_kewarganegaraan= $request->siswa_kewarganegaraan;
+        $data->siswa_kebutuhan_khusus= $request->siswa_kebutuhan_khusus;
+        $data->siswa_kebutuhan_disabilitas= $request->siswa_kebutuhan_disabilitas;
+        $data->siswa_kepala_keluarga= $request->siswa_kepala_keluarga;
+        $data->siswa_pernah_paud= $request->siswa_pernah_paud;
+        $data->siswa_pernah_tk= $request->siswa_pernah_tk;   
+        $data->siswa_jarak_tempuh= $request->siswa_jarak_tempuh;
+        $data->siswa_waktu_tempuh= $request->siswa_waktu_tempuh;
+        $data->siswa_cita_cita= $request->siswa_cita_cita;
+        $data->siswa_hobi= $request->siswa_hobi;
+        $data->siswa_media_sosial= $request->siswa_media_sosial;
+        $data->lembaga_id= $request->lembaga_id;
+        $data->save();
+        return redirect('/admin/siswa');
+    }
+    
 
 }

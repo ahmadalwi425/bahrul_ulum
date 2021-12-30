@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\lembaga;
+use App\Models\data_ortu;
 
-class pendaftaran extends Model
+class personal_ortu extends Model
 {
     use HasFactory;
-    protected $table = 'pendaftaran';
+    protected $table = 'personal_ortu';
     protected $guarded = [];
     public $timestamps = false;
-    public function lembaga(){
-        return $this->belongsTo(lembaga::class, 'id_lembaga');
+    public function personal_ortu(){
+        return $this->hasMany(personal_ortu::class, 'id');
     }
 }
