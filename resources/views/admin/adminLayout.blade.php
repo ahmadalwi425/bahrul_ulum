@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>PPBU - </title>
+  <title>PPBU - {{$nav}}</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{asset('storage/assets/img/LO GO.png')}}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('storage/img/logo.png')}}" type="image/x-icon">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
@@ -108,8 +108,9 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
 
+    @if($nav == "dashboard")
     <li class="nav-item">
-      <a class="nav-link active" href='{{url('admin')}}'>
+      <a class="nav-link active" href='{{url('dashboard')}}'>
         <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text text-dark">Dashboard</span>
       </a>
@@ -132,6 +133,86 @@
         <span class="nav-link-text">Lembaga</span>
       </a>
     </li>
+    @endif
+    @if($nav == "siswa")
+    <li class="nav-item">
+      <a class="nav-link" href='{{url('dashboard')}}'>
+        <i class="ni ni-tv-2 text-white"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text text-dark">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-white"></i>
+        <span class="nav-link-text">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    @endif
+    @if($nav == "pendaftaran")
+    <li class="nav-item">
+      <a class="nav-link" href='{{url('dashboard')}}'>
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-primary"></i>
+        <span class="nav-link-text text-dark">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    @endif
+    @if($nav == "lembaga")
+    <li class="nav-item">
+      <a class="nav-link" href='{{url('dashboard')}}'>
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-white"></i>
+        <span class="nav-link-text">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text text-dark">Lembaga</span>
+      </a>
+    </li>
+    @endif
+
     <!-- <li class="nav-item">
       <a class="nav-link" href="{{url('admin')}}/buletin">
         <i class="ni ni-books text-green"></i>
@@ -337,7 +418,7 @@
                   <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="media align-items-center">
                       <span class="avatar avatar-sm rounded-circle">
-                          <img src="{{asset('storage/img/user.png') }}" alt="Card image cap">
+                          <img src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
                       </span>
                       <div class="media-body  ml-2  d-none d-lg-block">
                         <span class="mb-0 text-sm  font-weight-bold"></span>

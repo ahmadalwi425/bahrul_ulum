@@ -17,14 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function () {
-    return view('admin.adminDashboard');
+    $nav = 'dashboard';
+    return view('admin.adminDashboard', compact('nav'));
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
-Route::get('/pendaftaran/{id}', [App\Http\Controllers\adminController::class, 'showPendaftaran']);
+Route::get('admin/pendaftaran/{id}', [App\Http\Controllers\adminController::class, 'showPendaftaran']);
 Route::get('/siswa/{id}', [App\Http\Controllers\adminController::class, 'showSiswa']);
 Route::get('/siswa/hapus/{id}', [App\Http\Controllers\adminController::class, 'hapusSiswa']);
 Route::post('/pendaftaran/store', [App\Http\Controllers\pendaftaranController::class, 'store']);
