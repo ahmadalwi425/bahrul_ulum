@@ -137,7 +137,7 @@
     @if($nav == "siswa")
     <li class="nav-item">
       <a class="nav-link" href='{{url('dashboard')}}'>
-        <i class="ni ni-tv-2 text-white"></i>
+        <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text">Dashboard</span>
       </a>
     </li>
@@ -470,7 +470,7 @@
     
     <!-- Argon Scripts -->
     <!-- Core -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{asset('js/jquery-3.6.0.min.js')}}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/js.cookie.js')}}"></script>
     <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
