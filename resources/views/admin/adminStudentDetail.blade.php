@@ -88,6 +88,7 @@
                       <input type="date" data-date-format="yyyy-mm-dd" name="siswa_tanggal_lahir" id="tanggallahir" class="form-control" placeholder="Tanggal Lahir" value="{{$data->siswa_tanggal_lahir}}">
                     </div>
                   </div>
+                  <div class="col-12 my-3"><hr></div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="alamat">Alamat</label>
@@ -158,6 +159,7 @@
                       <input type="text" name="siswa_no_hp" id="no_hp" class="form-control" placeholder="No Hp" value="{{$data->siswa_no_hp}}">
                     </div>
                   </div>
+                  <div class="col-12 my-3"><hr></div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="anak_ke">Anak Ke-</label>
@@ -222,6 +224,7 @@
                       <input type="text" name="siswa_kepala_keluarga" id="kepala_keluarga" class="form-control" placeholder="Kepala Keluarga" value="{{$data->siswa_kepala_keluarga}}">
                     </div>
                   </div>
+                  <div class="col-12 my-3"><hr></div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="pernah_paud">Pernah PAUD</label>

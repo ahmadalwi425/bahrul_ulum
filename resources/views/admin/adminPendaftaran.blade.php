@@ -7,7 +7,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-3">User</h6>
+            <h6 class="h2 text-white d-inline-block mb-3">Pendaftaran</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
@@ -75,7 +75,7 @@
                         <td>{{$row->pendaftaran_alamat}}</td>
                         <td>{{$row->pendaftaran_jenis_kelamin}}</td>
                         <td>
-                        <a href="{{ url('admin/pendaftaran/detail',$row->id) }}" class="badge badge-dot mr-4">
+                        <a href="{{ url('admin/pendaftaran',$row->id) }}" class="badge badge-dot mr-4">
                           <button class="btn btn-primary" type="button"><i class="fa fa-eye text-white mt--2 mr-3"></i> Detail</button>
                         </a>
                         </td>

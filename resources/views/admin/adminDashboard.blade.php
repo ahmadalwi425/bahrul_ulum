@@ -7,7 +7,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-3">User</h6>
+            <h6 class="h2 text-white d-inline-block mb-3">Dashboard</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
@@ -30,39 +30,12 @@
         <div class="card">
           <!-- Card header -->
           <div class="card-header border-0 pb-0">
-            <div class="mb-0 pb-0 row justify-content-between">
-              <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
-              <div class="search-place col-7 text-lg-left text-center"></div>
-              <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
-                <div class="row justify-content-center align-items-center">
-                  
-                  <div class="col-1 ml--2">
-                    <i class="ni ni-fat-add text-white text-md m-0 pt-1 text-lg"></i> 
-                  </div>
-                  <div class="col-6">
-                    <span class="d-inline-block pt--4">Tambah</span>
-                  </div>
-                </div>
-              </button>
-            </div>
+              <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Dashboard</h3>
+              <br><br>
           </div>
           <!-- Light table -->
           <div class="card-body pt-0">
-            <div class="table-responsive">
-              <table class="table align-items-center table-flush datatables">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col" class="sort" data-sort="name">NIM</th>
-                    <th scope="col" class="sort" data-sort="name">Nama</th>
-                    <th scope="col" class="sort" data-sort="completion">Jurusan</th>
-                    <th scope="col" class="sort" data-sort="completion">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody class="list">
-                  
-                </tbody>
-              </table>
-            </div>
+            
           </div>
           <!-- Card footer -->
           <!-- <div class="card-footer py-4">

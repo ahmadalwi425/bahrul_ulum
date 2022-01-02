@@ -57,8 +57,9 @@ class adminController extends Controller
      */
     public function showPendaftaran($id)
     {
-        pendaftaran::where('id',$id)->first();
-        return view('admin.detailPendaftaran');
+        $data = pendaftaran::where('id',$id)->first();
+        $nav = "pendaftaran";
+        return view('admin.adminPendaftaranDetail', compact('data', 'nav'));
     }
     public function showSiswa($id)
     {
@@ -171,17 +172,20 @@ class adminController extends Controller
     {
         $data = pendaftaran::get()->sortBy('pendaftaran_status');
         $jumlahrequest = pendaftaran::where('pendaftaran_status','diminta')->get()->count();
-        return view('admin.adminPendaftaran',compact('data','jumlahrequest'));
+        $nav = "pendaftaran";
+        return view('admin.adminPendaftaran',compact('data','jumlahrequest', 'nav'));
     }
     public function siswa()
     {
         $data = siswa::with('lembaga')->get();
-        return view('admin.adminStudent',compact('data'));
+        $nav = "siswa";
+        return view('admin.adminStudent',compact('data', 'nav'));
     }
     public function siswaDetail($id)
     {
         $data = siswa::where('id',$id)->first();
-        return view('admin.adminStudentDetail',compact('data'));
+        $nav = "siswa";
+        return view('admin.adminStudentDetail',compact('data', 'nav'));
     }
     public function siswaUpdate(Request $request,$id)
     {
