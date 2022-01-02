@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
+Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);
 Route::get('admin/pendaftaran/{id}', [App\Http\Controllers\adminController::class, 'showPendaftaran']);
 Route::get('/siswa/{id}', [App\Http\Controllers\adminController::class, 'showSiswa']);
 Route::get('/siswa/hapus/{id}', [App\Http\Controllers\adminController::class, 'hapusSiswa']);
@@ -40,4 +41,5 @@ Route::get('/admin/siswa/detail/{id}', [App\Http\Controllers\adminController::cl
 Route::put('/admin/siswa/update/{id}', [App\Http\Controllers\adminController::class, 'siswaUpdate']);
 Route::get('/admin/siswa/export', [App\Http\Controllers\adminController::class, 'exportSiswa']);
 Route::post('/admin/siswa/import', [App\Http\Controllers\adminController::class, 'importSiswa']);
+Route::get('/admin/menu/create', [App\Http\Controllers\menuController::class, 'create']);
 Route::post('/admin/menu/store', [App\Http\Controllers\menuController::class, 'store']);

@@ -35,17 +35,17 @@
             <div class="mb-0 pb-0 row justify-content-between">
               <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
+              <a href="{{url('admin/menu/create')}}" type="button" class="btn-success btn col-lg-3 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
-                    <i class="ni ni-fat-add text-white text-md m-0 pt-1 text-lg"></i> 
+                    <i class="fa fa-file-excel-o text-white text-md m-0 pt-1 text-lg"></i> 
                   </div>
                   <div class="col-6">
-                    <span class="d-inline-block pt--4">Tambah</span>
+                    <span class="d-inline-block pt--4">Tambah Menu</span>
                   </div>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Light table -->

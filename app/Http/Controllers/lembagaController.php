@@ -15,7 +15,8 @@ class lembagaController extends Controller
     public function index()
     {
         $data = lembaga::get();
-        return view('admin.adminLembaga',compact('data'));
+        $nav = "lembaga";
+        return view('admin.adminLembaga',compact('data','nav'));
     }
 
     /**
