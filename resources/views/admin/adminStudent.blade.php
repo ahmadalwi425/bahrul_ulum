@@ -32,19 +32,19 @@
           <!-- Card header -->
           <div class="card-header border-0 pb-0">
             <div class="mb-0 pb-0 row justify-content-between">
-              <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
+              <h3 class="mb-0 col-3 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
+              <a href="{{url('admin/siswa/export')}}" type="button" class="btn-success btn col-lg-3 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
-                    <i class="ni ni-fat-add text-white text-md m-0 pt-1 text-lg"></i> 
+                    <i class="fa fa-file-excel-o text-white text-md m-0 pt-1 text-lg"></i> 
                   </div>
                   <div class="col-6">
-                    <span class="d-inline-block pt--4">Tambah</span>
+                    <span class="d-inline-block pt--4">Export Excel</span>
                   </div>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Light table -->
@@ -54,9 +54,11 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name">No</th>
+                    <th scope="col" class="sort" data-sort="name">NISN</th>
                     <th scope="col" class="sort" data-sort="name">Nama</th>
                     <th scope="col" class="sort" data-sort="completion">Alamat</th>
                     <th scope="col" class="sort" data-sort="completion">Jenis Kelamin</th>
+                    <th scope="col" class="sort" data-sort="completion">Jenjang</th>
                     <th scope="col" class="sort" data-sort="completion">Aksi</th>
                   </tr>
                 </thead>
@@ -64,9 +66,11 @@
                     @foreach($data as $row)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$row->siswa_nisn}}</td>
                         <td>{{$row->siswa_nama}}</td>
                         <td>{{$row->siswa_alamat}}</td>
                         <td>{{$row->siswa_jenis_kelamin}}</td>
+                        <td>{{$row->lembaga->lembaga_nama}}</td>
                         <td>
                       <a href="{{ url('admin/siswa/detail',$row->id) }}" class="badge badge-dot mr-4">
                         <button class="btn btn-warning" type="button"><i class="ni ni-ruler-pencil text-white mt--2 mr-3"></i> Edit</button>
