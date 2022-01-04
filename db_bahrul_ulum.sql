@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 09:56 AM
+-- Generation Time: Jan 04, 2022 at 03:02 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -32,16 +32,26 @@ CREATE TABLE `data_ortu` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `data_ortu_nama_wali` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `data_ortu_status_wali` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `data_ortu_no_hp_wali` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_ortu_alamat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_ortu_kelurahan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_ortu_provinsi` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_ortu_kota` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_ortu_kecamatan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data_ortu_no_hp_wali` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data_ortu_alamat` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data_ortu_kelurahan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data_ortu_provinsi` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data_ortu_kota` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data_ortu_kecamatan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `siswa_id` bigint(20) UNSIGNED NOT NULL,
   `ibu_id` bigint(20) UNSIGNED DEFAULT NULL,
   `ayah_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_ortu`
+--
+
+INSERT INTO `data_ortu` (`id`, `data_ortu_nama_wali`, `data_ortu_status_wali`, `data_ortu_no_hp_wali`, `data_ortu_alamat`, `data_ortu_kelurahan`, `data_ortu_provinsi`, `data_ortu_kota`, `data_ortu_kecamatan`, `siswa_id`, `ibu_id`, `ayah_id`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL),
+(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL),
+(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2021_12_18_091403_create_data_ortu_table', 1),
 (10, '2021_12_18_093124_create_personal_ortu_table', 1),
 (11, '2021_12_18_093256_create_status_ortu_table', 1),
-(12, '2021_12_18_093741_create_pendidikan_sebelumnya_table', 1);
+(12, '2021_12_18_093741_create_pendidikan_sebelumnya_table', 1),
+(13, '2021_12_24_202508_create_menu_table', 2),
+(14, '2021_12_24_202721_create_berita_table', 2);
 
 -- --------------------------------------------------------
 
@@ -182,6 +194,13 @@ CREATE TABLE `pendaftaran` (
   `pendaftaran_tanggal_masuk` date NOT NULL,
   `lembaga_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pendaftaran`
+--
+
+INSERT INTO `pendaftaran` (`id`, `pendaftaran_no_kk`, `pendaftaran_nisn`, `pendaftaran_no_kip`, `pendaftaran_nama`, `pendaftaran_jenis_kelamin`, `pendaftaran_tempat_lahir`, `pendaftaran_tanggal_lahir`, `pendaftaran_alamat`, `pendaftaran_kelurahan`, `pendaftaran_provinsi`, `pendaftaran_kota`, `pendaftaran_kecamatan`, `pendaftaran_kode_pos`, `pendaftaran_agama`, `pendaftaran_no_hp`, `pendaftaran_anak_ke`, `pendaftaran_jumlah_saudara`, `pendaftaran_status_tempat_tinggal`, `pendaftaran_pembiaya`, `pendaftaran_kewarganegaraan`, `pendaftaran_kebutuhan_khusus`, `pendaftaran_kebutuhan_disabilitas`, `pendaftaran_kepala_keluarga`, `pendaftaran_pernah_paud`, `pendaftaran_pernah_tk`, `pendaftaran_jarak_tempuh`, `pendaftaran_waktu_tempuh`, `pendaftaran_cita_cita`, `pendaftaran_hobi`, `pendaftaran_media_sosial`, `pendaftaran_status`, `pendaftaran_tanggal_masuk`, `lembaga_id`) VALUES
+(1, '3244', '3534234', '4534', 'dfsvxcv', 'dvsdv', 'sdfsdf', '2021-12-08', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'hfdgd', '3453', 'sdfsdf', '345342', '2', '4', 'dfgdfgdd', 'asdasdf', 'sdfsdfsdf', 'fergd', 'dfgd', 'ddfgdfg', 'dfg', 'dfg', 'gdc', '2dg', '32dffg', 'rdggd', 'dfgdfg', 'diminta', '0000-00-00', 2);
 
 -- --------------------------------------------------------
 
@@ -275,6 +294,16 @@ CREATE TABLE `siswa` (
   `lembaga_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id`, `siswa_no_kk`, `siswa_nisn`, `siswa_no_kip`, `siswa_nama`, `siswa_jenis_kelamin`, `siswa_tempat_lahir`, `siswa_tanggal_lahir`, `siswa_alamat`, `siswa_kelurahan`, `siswa_provinsi`, `siswa_kota`, `siswa_kecamatan`, `siswa_kode_pos`, `siswa_agama`, `siswa_no_hp`, `siswa_anak_ke`, `siswa_jumlah_saudara`, `siswa_status_tempat_tinggal`, `siswa_pembiaya`, `siswa_kewarganegaraan`, `siswa_kebutuhan_khusus`, `siswa_kebutuhan_disabilitas`, `siswa_kepala_keluarga`, `siswa_pernah_paud`, `siswa_pernah_tk`, `siswa_jarak_tempuh`, `siswa_waktu_tempuh`, `siswa_cita_cita`, `siswa_hobi`, `siswa_media_sosial`, `lembaga_id`) VALUES
+(1, '234324', '32341', '234234', 'siswa1', 'laki-laki', 'jakarta', '2021-12-23', 'Jl. siswa1', 'aasdasd', 'sdfsdf', 'sdfsdf', 'gfsdf', '3124', 'islam', '0814263', '2', '4', 'rumah', 'ayah', 'Indonesia', 'Ada', 'Ada', 'bapak siswa1', 'pernah', 'pernah', '2 km', '12 menit', 'Pilot', 'Main', 'siswa1_123', 1),
+(2, '234324', '32342', '234234', 'siswa12', 'laki-laki', 'jakarta', '2021-12-23', 'Jl. siswa1', 'aasdasd', 'sdfsdf', 'sdfsdf', 'gfsdf', '3124', 'islam', '0814263', '2', '4', 'rumah', 'ayah', 'Indonesia', 'Ada', 'Ada', 'bapak siswa1', 'pernah', 'pernah', '2 km', '12 menit', 'Pilot', 'Main', 'siswa1_123', 2),
+(3, '234324', '32343', '234234', 'siswa2', 'laki-laki', 'jakarta', '2021-12-23', 'Jl. siswa1', 'aasdasd', 'sdfsdf', 'sdfsdf', 'gfsdf', '3124', 'islam', '0814263', '2', '4', 'rumah', 'ayah', 'Indonesia', 'Tidak ada', 'Tidak ada', 'bapak siswa1', 'pernah', 'pernah', '2 km', '12 menit', 'Pilot', 'Main', 'siswa1_123', 2),
+(4, '234324', '32344', '234234', 'siswa3', 'laki-laki', 'jakarta', '2021-12-23', 'Jl. siswa1', 'aasdasd', 'sdfsdf', 'sdfsdf', 'gfsdf', '3124', 'islam', '0814263', '2', '4', 'rumah', 'ayah', 'Indonesia', 'Tidak ada', 'Tidak ada', 'bapak siswa1', 'pernah', 'pernah', '2 km', '12 menit', 'Pilot', 'Main', 'siswa1_123', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -297,11 +326,18 @@ CREATE TABLE `users` (
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `level_id` bigint(20) UNSIGNED NOT NULL,
+  `level_id` bigint(20) UNSIGNED NOT NULL DEFAULT 1,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `level_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', '$2y$10$qx2j4lxBANmUEJHDXcttpO29dAmUR.IQUD6J66HPNQE9ty6oCcCFC', 1, NULL, '2021-12-23 23:02:01', '2021-12-23 23:02:01');
 
 --
 -- Indexes for dumped tables
@@ -402,7 +438,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `data_ortu`
 --
 ALTER TABLE `data_ortu`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -426,13 +462,13 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pendidikan_sebelumnya`
@@ -456,7 +492,7 @@ ALTER TABLE `personal_ortu`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `status_ortu`
@@ -468,7 +504,7 @@ ALTER TABLE `status_ortu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
