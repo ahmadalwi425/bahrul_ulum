@@ -1,0 +1,13 @@
+@font-face {
+    font-family: fontNavbar;
+    src: url(font/Montserrat-Regular.ttf);
+}
+
+.fontNavbar {
+    font-family: fontNavbar, Calibri;
+}
+
+.btn-primer {
+    background-color: #609C56 !important;
+    color: white !important;
+}
