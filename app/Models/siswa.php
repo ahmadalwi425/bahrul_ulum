@@ -14,7 +14,7 @@ class siswa extends Model
     protected $guarded = [];
     public $timestamps = false;
     public function lembaga(){
-        return $this->belongsTo(lembaga::class, 'id_lembaga');
+        return $this->belongsTo(lembaga::class, 'lembaga_id');
     }
     public function data_ortu(){
         return $this->hasMany(data_ortu::class, 'id');

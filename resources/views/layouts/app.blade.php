@@ -44,7 +44,7 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         @foreach($datamenu as $row2)
                                             @if($row->id == $row2->id_lembaga)
-                                                <a class="dropdown-item">
+                                                <a href="{{ url('menu',$row2->id) }}" class="dropdown-item">
                                                     {{$row2->menu_judul}}
                                                 </a>
                                             @endif

@@ -177,7 +177,7 @@ class adminController extends Controller
     }
     public function siswa()
     {
-        $data = siswa::get();
+        $data = siswa::with('lembaga')->get();
         $nav = "siswa";
         return view('admin.adminStudent',compact('data', 'nav'));
     }

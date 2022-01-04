@@ -15,7 +15,8 @@ class menuController extends Controller
     public function index($id)
     {
         $data = menu::where('id_lembaga',$id)->get();
-        return view('admin.adminMenu',compact('data'));
+        $nav = "menu";
+        return view('admin.adminMenu',compact('data','nav'));
     }
 
     /**
@@ -25,7 +26,8 @@ class menuController extends Controller
      */
     public function create()
     {
-        //
+        $nav = "menu";
+        return view('admin.adminMenuCreate',compact('nav'));
     }
 
     /**
