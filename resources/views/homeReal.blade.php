@@ -82,7 +82,7 @@
         <button class="btn btn-primer">Login</button>
       </div>
     </nav>
-    
+
     {{-- FullPage --}}
     <div style="padding: 0; padding-top: 40px" class="container-fluid mt-7">
         <div class="col-12">
@@ -116,7 +116,22 @@
     </div>
 
     {{-- About --}}
-
+    <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
+      <div class="container py-5">
+        <div class="row">
+        <div class="col-12">
+          <p class="display-6 fontUpJumbotron p-0 m-0">Selamat Datang di</p>
+          <h1 class="display-3 p-0 m-0 fontJumbotron">Yayasan Bahrul Ulum</h1>
+        </div>
+        <div class="col-5"></div>
+        <div class="col-7 pt-5 align-self-end">
+          <p class="fontNavbar text-end">
+            Yayasan Pondok Pesantren Bahrul Ulum merupakan yayasan yang bergerak di bidang pendidikan islam dengan dasar pondok pesantren. Yayasan ini telah memiliki jenjang pendidikan TK, SMP, SMA serta Pondok Pesantren.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Optional JavaScript; choose one of the two! -->
 

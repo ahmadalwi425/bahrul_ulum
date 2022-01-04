@@ -2,6 +2,14 @@
     font-family: fontNavbar;
     src: url(font/Montserrat-Regular.ttf);
 }
+@font-face {
+    font-family: fontJumbotron;
+    src: url(font/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: fontJumbotron;
+    src: url(font/Montserrat-Bold.ttf);
+}
 
 .fontNavbar {
     font-family: fontNavbar, Calibri;
@@ -10,4 +18,14 @@
 .btn-primer {
     background-color: #609C56 !important;
     color: white !important;
+}
+
+.fontJumbotron {
+    font-family: fontJumbotron, Calibri;
+    color: #235339;
+}
+
+.fontUpJumbotron {
+    font-family: fontJumbotron, Calibri;
+    color: #609C56;
 }
