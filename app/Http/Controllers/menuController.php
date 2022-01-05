@@ -49,7 +49,7 @@ class menuController extends Controller
             'menu_konten'=> $request->menu_konten,
             'id_lembaga'=> $request->id_lembaga,
         ]);
-        return redirect('/home');
+        return redirect('admin/lembaga/menu/'.$request->id_lembaga);
     }
 
     /**
@@ -71,7 +71,9 @@ class menuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nav = "menu";
+        $data = menu::find($id);
+        return view('admin.adminMenuEdit',compact('data','nav'));
     }
 
     /**
@@ -83,7 +85,13 @@ class menuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = menu::find($id);
+        $data->menu_judul = $request->menu_judul;
+        $data->menu_konten = $request->menu_konten;
+        $data->id_lembaga = $request->id_lembaga;
+        $id_temp = $data->id_lembaga;
+        $data->save();
+        return redirect('admin/lembaga/menu/'.$id_temp);
     }
 
     /**
@@ -94,6 +102,9 @@ class menuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = menu::where('id',$id)->first();
+        $id_temp = $data->id_lembaga;
+        $data->delete();
+        return redirect('admin/lembaga/menu/'.$id_temp);
     }
 }

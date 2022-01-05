@@ -63,8 +63,8 @@
         confirmButtonText: 'Iya, hapus saja!'
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log(link);
-          // window.location.href = link;
+          // console.log(link);
+          window.location.href = link;
         }
       })
     }
@@ -110,7 +110,7 @@
 
     @if($nav == "dashboard")
     <li class="nav-item">
-      <a class="nav-link active" href='{{url('dashboard')}}'>
+      <a class="nav-link active" href="{{url('dashboard')}}">
         <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text text-dark">Dashboard</span>
       </a>
@@ -133,10 +133,15 @@
         <span class="nav-link-text">Lembaga</span>
       </a>
     </li>
-    @endif
-    @if($nav == "siswa")
     <li class="nav-item">
-      <a class="nav-link" href='{{url('dashboard')}}'>
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    @elseif($nav == "siswa")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
         <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text">Dashboard</span>
       </a>
@@ -159,10 +164,15 @@
         <span class="nav-link-text">Lembaga</span>
       </a>
     </li>
-    @endif
-    @if($nav == "pendaftaran")
     <li class="nav-item">
-      <a class="nav-link" href='{{url('dashboard')}}'>
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    @elseif($nav == "pendaftaran")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
         <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text">Dashboard</span>
       </a>
@@ -185,10 +195,15 @@
         <span class="nav-link-text">Lembaga</span>
       </a>
     </li>
-    @endif
-    @if($nav == "lembaga")
     <li class="nav-item">
-      <a class="nav-link" href='{{url('dashboard')}}'>
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    @elseif($nav == "lembaga" || $nav == "menu")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
         <i class="ni ni-tv-2 text-primary"></i>
         <span class="nav-link-text">Dashboard</span>
       </a>
@@ -209,6 +224,43 @@
       <a class="nav-link active" href="{{url('admin/lembaga')}}">
         <i class="fa fa-university text-red"></i>
         <span class="nav-link-text text-dark">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    @elseif($nav == "berita")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-white"></i>
+        <span class="nav-link-text">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-white"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-red"></i>
+        <span class="nav-link-text text-dark">Berita</span>
       </a>
     </li>
     @endif

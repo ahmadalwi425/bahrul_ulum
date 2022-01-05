@@ -37,7 +37,7 @@
         </div>
         <!-- Light table -->
         <div class="card-body pt-0">
-            <form action="{{url('admin/menu/store')}}" method="post">
+            <form action="{{url('admin/menu/update/'.$data->id)}}" method="post">
                 @csrf
                 @if(count($errors) > 0)
                     <div class="row">
@@ -50,13 +50,14 @@
                         </div>
                     </div>
                 @endif
-                <h6 class="heading-small text-muted mb-4">Tambahkan Menu Baru</h6>
+                @method('PUT')
+                <h6 class="heading-small text-muted mb-4">Edit Menu</h6>
                 <div class="pl-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="judul">Judul</label>
-                            <input type="text" id="judul" class="form-control" name="menu_judul" placeholder="judul">
+                            <input type="text" id="judul" class="form-control" name="menu_judul" placeholder="judul" value="{{$data->menu_judul}}">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -64,7 +65,11 @@
                             <label class="form-control-label" for="jenkel">Lembaga</label>
                             <select name="id_lembaga" id="jenkel" class="form-control">
                                 @foreach($datalembaga as $row)
+                                    @if($data->id_lembaga == $row->id)
+                                    <option value="{{$row->id}}" selected>{{$row->lembaga_nama}}</option>
+                                    @else
                                     <option value="{{$row->id}}">{{$row->lembaga_nama}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
@@ -72,7 +77,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="ckeditor">Konten</label>
-                            <textarea name="menu_konten" class="ckeditor" id="ckeditor"></textarea>
+                            <textarea name="menu_konten" class="ckeditor" id="ckeditor">{!!$data->menu_konten!!}</textarea>
                         </div>
                     </div>
                 </div>
