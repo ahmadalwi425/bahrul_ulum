@@ -16,13 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homeReal');
 });
-Route::get('/dashboard', function () {
-    $nav = 'dashboard';
-    return view('admin.adminDashboard', compact('nav'));
-});
 
 Auth::routes();
-
+Route::get('/dashboard', [App\Http\Controllers\adminController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
 Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);

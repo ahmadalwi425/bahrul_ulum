@@ -23,9 +23,24 @@ class adminController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function dashboard()
     {
-        //
+        $lembaga = lembaga::get();
+        $siswa = siswa::get();
+        $data = array(
+            array(
+            
+            )
+        );
+        $start = 0;
+        foreach($lembaga as $i){
+            $data[$start][0]=$i->lembaga_nama;
+            $data[$start][1]=siswa::where('lembaga_id',$i->id)->count();
+            $data[$start][2]=menu::where('id_lembaga',$i->id)->count();
+            $start++;
+        }
+        $nav = 'dashboard';
+        return view('admin.adminDashboard', compact('nav','data','lembaga','siswa'));
     }
 
     /**

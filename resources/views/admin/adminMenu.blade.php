@@ -39,13 +39,14 @@
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
-                    <i class="fa fa-file-excel-o text-white text-md m-0 pt-1 text-lg"></i> 
+                    <i class="fa fa-plus text-white text-md m-0 pt-1 text-lg"></i> 
                   </div>
                   <div class="col-6">
                     <span class="d-inline-block pt--4">Tambah Menu</span>
                   </div>
                 </div>
               </a>
+              <br>
             </div>
           </div>
           <!-- Light table -->

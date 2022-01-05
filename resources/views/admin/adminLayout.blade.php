@@ -253,7 +253,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/lembaga')}}">
-        <i class="fa fa-university text-white"></i>
+        <i class="fa fa-university text-red"></i>
         <span class="nav-link-text">Lembaga</span>
       </a>
     </li>

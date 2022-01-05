@@ -25,47 +25,73 @@
   </div>
   <!-- Page content -->
   <div class="container-fluid mt--6">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <!-- Card header -->
-          <div class="card-header border-0 pb-0">
-              <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Dashboard</h3>
-              <br><br>
+  <div class="row">
+    @foreach($data as $row)
+    <div class="col-xl-3 col-md-6">
+      <div class="card card-stats">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-uppercase text-muted mb-0">{{$row[0]}}</h5>
+              <span class="h2 font-weight-bold mb-0">{{$row[1]}} Siswa</span>
+            </div>
+            <div class="col-auto">
+              <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                <i class="fa fa-users"></i>
+              </div>
+            </div>
           </div>
-          <!-- Light table -->
-          <div class="card-body pt-0">
-            
-          </div>
-          <!-- Card footer -->
-          <!-- <div class="card-footer py-4">
-            <nav aria-label="...">
-              <ul class="pagination justify-content-end mb-0">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">
-                    <i class="fas fa-angle-left"></i>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
-                    <i class="fas fa-angle-right"></i>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div> -->
+          <p class="mt-3 mb-0 text-sm">
+            <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> -->
+            <span class="text-nowrap">{{$row[2]}} jumlah menu</span>
+          </p>
         </div>
       </div>
     </div>
+    @endforeach
+	</div>
+
+  <div class="row">
+    @foreach ($lembaga as $row)
+    
+      <div class="col-xl-4">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0 pb-0">
+            <div class="mb-0 pb-0 row justify-content-between">
+              <h3 class="mb-0 col-5 text-lg-left">Siswa {{$row->lembaga_nama}}</h3>
+              <br>
+            </div>
+          </div>
+          <!-- Light table -->
+          <div class="card-body pt-0">
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush datatables">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">NISN</th>
+                    <th scope="col" class="sort" data-sort="name">Nama</th>
+                    <th scope="col" class="sort" data-sort="completion">Jenkel</th>
+                  </tr>
+                </thead>
+                <tbody class="list">                    
+                    @foreach($siswa as $row2)
+                    @if($row2->lembaga_id == $row->id)
+                    <tr>
+                      <td>{{$row2->siswa_nisn}}</td>
+                      <td>{{$row2->siswa_nama}}</td>
+                      <td>{{$row2->siswa_jenis_kelamin}}</td>
+                    </tr>
+                    @endif
+                    @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endforeach
+</div>
     <!-- Footer -->
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
