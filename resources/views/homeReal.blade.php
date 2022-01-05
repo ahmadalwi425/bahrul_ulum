@@ -16,6 +16,10 @@
     <!-- Bootstrap CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" crossorigin="anonymous">
 
+    {{-- splide --}}
+    <link rel="stylesheet" href="{{asset('css/splide.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/splide-core.min.css')}}">
+
     {{-- pagepilling.css
     <link rel="stylesheet" href="{{asset('css/jquery.pagepiling.css')}}">
     
@@ -132,6 +136,58 @@
         </div>
       </div>
     </div>
+
+    {{-- Berita --}}
+    <div class="container-fluid" style="background-color: white; padding-top: 100px; padding-bottom: 100px;">
+      <div class="container py-2 pb-5">
+        <div class="row">
+          <h1 class="display-3 fontJumbotron text-center">
+            Berita Terkini
+          </h1>
+          <div class="col-12">
+            <div class="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">\
+                    <div class="card">
+                      <div class="card-body">
+                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      </div>
+                      <div class="card-footer">
+                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">\
+                    <div class="card">
+                      <div class="card-body">
+                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      </div>
+                      <div class="card-footer">
+                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">\
+                    <div class="card">
+                      <div class="card-body">
+                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      </div>
+                      <div class="card-footer">
+                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{-- Program Kami --}}
+    <div class="container-fluid" style="background-color: #C4C4C4; padding-top: 100px; padding-bottom: 100px;"></div>
     
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -148,14 +204,21 @@
     <script src="{{asset('js/jquery.js')}}" ></script>
     <!-- fullPage.js -->
     <script src="{{asset('js/jquery.pagepiling.js')}}" ></script>
+    {{-- splide --}}
+    <script src="{{asset('js/splide.js')}}" ></script>
 
     <script>
-      // $(document).ready(function() {
-      //   $('#pagepiling').pagepiling({
-      //     easing: 'linear',
-      //     animateAnchor: false
-      //   });
-      // });
+        document.addEventListener( 'DOMContentLoaded', function() {
+          var splide = new Splide( '.splide', {
+            type   : 'loop',
+            gap: 20,
+            perPage: 3,
+            focus: 'center',
+            drag: 'free',
+            autoplay: true
+          } );
+          splide.mount();
+        } );
     </script>
   </body>
 </html>
