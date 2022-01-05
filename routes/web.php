@@ -14,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/dashboard', function () {
-    $nav = 'dashboard';
-    return view('admin.adminDashboard', compact('nav'));
+    return view('homeReal');
 });
 
 Auth::routes();
-
+Route::get('/dashboard', [App\Http\Controllers\adminController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
 Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);
@@ -42,4 +38,13 @@ Route::put('/admin/siswa/update/{id}', [App\Http\Controllers\adminController::cl
 Route::get('/admin/siswa/export', [App\Http\Controllers\adminController::class, 'exportSiswa']);
 Route::post('/admin/siswa/import', [App\Http\Controllers\adminController::class, 'importSiswa']);
 Route::get('/admin/menu/create', [App\Http\Controllers\menuController::class, 'create']);
+Route::get('/admin/menu/edit/{id}', [App\Http\Controllers\menuController::class, 'edit']);
+Route::get('/admin/menu/destroy/{id}', [App\Http\Controllers\menuController::class, 'destroy']);
 Route::post('/admin/menu/store', [App\Http\Controllers\menuController::class, 'store']);
+Route::put('/admin/menu/update/{id}', [App\Http\Controllers\menuController::class, 'update']);
+Route::get('/admin/berita', [App\Http\Controllers\beritaController::class, 'index']);
+Route::get('/admin/berita/create', [App\Http\Controllers\beritaController::class, 'create']);
+Route::post('/admin/berita/store', [App\Http\Controllers\beritaController::class, 'store']);
+Route::get('/admin/berita/edit/{id}', [App\Http\Controllers\beritaController::class, 'edit']);
+Route::put('/admin/berita/update/{id}', [App\Http\Controllers\beritaController::class, 'update']);
+Route::get('/admin/berita/destroy/{id}', [App\Http\Controllers\beritaController::class, 'destroy']);

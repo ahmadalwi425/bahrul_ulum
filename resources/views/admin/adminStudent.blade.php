@@ -47,6 +47,7 @@
               </a>
             </div>
           </div>
+          <br>
           <!-- Light table -->
           <div class="card-body pt-0">
             <div class="table-responsive">

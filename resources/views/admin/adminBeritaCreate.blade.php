@@ -7,12 +7,12 @@
     <div class="header-body">
         <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-3">menu</h6>
+            <h6 class="h2 text-white d-inline-block mb-3">berita</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
                 <a href="{{url('/admin')}}"><i class="fa fa-home text-primary"></i> Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{url('/admin/menu')}}"></i> menu</a></li>
+                <li class="breadcrumb-item"><a href="{{url('/admin/berita')}}"></i> berita</a></li>
                 <li class="breadcrumb-item active" aria-current="page">detail</li>
             </ol>
             </nav>
@@ -37,7 +37,7 @@
         </div>
         <!-- Light table -->
         <div class="card-body pt-0">
-            <form action="{{url('admin/menu/store')}}" method="post">
+            <form action="{{url('admin/berita/store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @if(count($errors) > 0)
                     <div class="row">
@@ -50,29 +50,25 @@
                         </div>
                     </div>
                 @endif
-                <h6 class="heading-small text-muted mb-4">Tambahkan Menu Baru</h6>
+                <h6 class="heading-small text-muted mb-4">Tambahkan Berita Baru</h6>
                 <div class="pl-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="judul">Judul</label>
-                            <input type="text" id="judul" class="form-control" name="menu_judul" placeholder="judul">
+                            <input type="text" id="judul" class="form-control" name="berita_judul" placeholder="judul">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="jenkel">Lembaga</label>
-                            <select name="id_lembaga" id="jenkel" class="form-control">
-                                @foreach($datalembaga as $row)
-                                    <option value="{{$row->id}}">{{$row->lembaga_nama}}</option>
-                                @endforeach
-                            </select>
+                            <label class="form-control-label" for="jenkel">Cover</label>
+                            <input type="file" id="judul" class="form-control" name="gambar" placeholder="File Cover">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="ckeditor">Konten</label>
-                            <textarea name="menu_konten" class="ckeditor" id="ckeditor"></textarea>
+                            <textarea name="berita_konten" class="ckeditor" id="ckeditor"></textarea>
                         </div>
                     </div>
                 </div>

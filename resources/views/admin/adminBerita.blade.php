@@ -12,7 +12,7 @@
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
                   <a href="{{url('/admin')}}"><i class="fa fa-home text-primary"></i> Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">lembaga</li>
+                  <li class="breadcrumb-item active" aria-current="page">berita</li>
               </ol>
             </nav>
           </div>
@@ -35,20 +35,20 @@
             <div class="mb-0 pb-0 row justify-content-between">
               <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <a href="{{url('admin/menu/create')}}" type="button" class="btn-success btn col-lg-3 col-12 mt-3 mt-lg-0 mb-0">
+              <a href="{{url('admin/berita/create')}}" type="button" class="btn-success btn col-lg-3 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
                     <i class="fa fa-plus text-white text-md m-0 pt-1 text-lg"></i> 
                   </div>
                   <div class="col-6">
-                    <span class="d-inline-block pt--4">Tambah Menu</span>
+                    <span class="d-inline-block pt--4">Tambah Berita</span>
                   </div>
                 </div>
               </a>
-              <br>
             </div>
           </div>
+          <br>
           <!-- Light table -->
           <div class="card-body pt-0">
             <div class="table-responsive">
@@ -56,35 +56,35 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name">No</th>
-                    <th scope="col" class="sort" data-sort="name">Nama</th>
-                    <th scope="col" class="sort" data-sort="completion">Konten</th>
+                    <th scope="col" class="sort" data-sort="name">Judul</th>
+                    <th scope="col" class="sort" data-sort="completion">Cover</th>
                     <th scope="col" class="sort" data-sort="completion">Aksi</th>
-                  </tr>
+                </tr>
                 </thead>
                 <tbody class="list">                    
                     @foreach($data as $row)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$row->menu_judul}}</td>
+                        <td>{{$row->berita_judul}}</td>
                         <td>
-                        <a href="{{ url('admin/menu/edit',$row->id) }}" class="badge badge-dot mr-4">
-                          <button class="btn btn-primary" type="button"><i class="fa fa-pencil text-white mt--2 mr-3"></i> Edit Menu</button>
-                        </a>
+                            <img src="{{asset('storage/'.$row->berita_cover)}}" alt="" style="width:200px;height:100px;">
                         </td>
                         <td>
-                        
+                        <a href="{{ url('admin/berita/edit',$row->id) }}" class="badge badge-dot mr-4">
+                        <button class="btn btn-warning" type="button"><i class="ni ni-ruler-pencil text-white mt--2 mr-3"></i> Edit</button>
+                        </a>
                         <span class="badge badge-dot mr-4">
-                        <a class="btn btn-danger" href="{{ url('admin/menu/destroy',$row->id) }}" onclick="del(event);">
-                          <div class="row justify-content-center align-items-center">
-                            <div class="col-1">
-                              <i class="ni ni-fat-remove text-white mt--4 ml--3 text-xl"></i> 
+                        <a class="btn btn-danger" href="{{ url('admin/berita/destroy',$row->id) }}" onclick="del(event);">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-1">
+                                    <i class="ni ni-fat-remove text-white mt--4 ml--3 text-xl"></i> 
+                                </div>
+                                <div class="col-6">
+                                    <span class="ml--3">
+                                        Delete
+                                    </span>
+                                </div>
                             </div>
-                            <div class="col-6">
-                              <span class="ml--3">
-                                Delete
-                              </span>
-                            </div>
-                          </div>
                         </a>
                         </td>
                     </tr>

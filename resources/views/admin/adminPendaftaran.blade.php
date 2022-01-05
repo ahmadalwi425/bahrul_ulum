@@ -40,7 +40,7 @@
             <div class="mb-0 pb-0 row justify-content-between">
               <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
+              <!-- <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
@@ -50,8 +50,9 @@
                     <span class="d-inline-block pt--4">Tambah</span>
                   </div>
                 </div>
-              </button>
+              </button> -->
             </div>
+            <br>
           </div>
           <!-- Light table -->
           <div class="card-body pt-0">

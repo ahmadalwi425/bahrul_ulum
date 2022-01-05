@@ -45,46 +45,44 @@
             <li class="nav-item mx-3">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item mx-3 dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                TK
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Visi Misi</a></li>
-                <li><a class="dropdown-item" href="#">Profil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Alumni</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                SMP
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Visi Misi</a></li>
-                <li><a class="dropdown-item" href="#">Profil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Alumni</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-3 dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                SMA
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Visi Misi</a></li>
-                <li><a class="dropdown-item" href="#">Profil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Alumni</a></li>
-              </ul>
-            </li>
+            @isset($datalembaga)
+              @foreach($datalembaga as $row)
+                <li class="nav-item mx-3 dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{$row->lembaga_nama}}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach($datamenu as $row2)
+                      @if($row->id == $row2->id_lembaga)
+                        <li><a class="dropdown-item" href="{{ url('menu',$row2->id) }}">{{$row2->menu_judul}}</a></li>
+                        <!-- <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Alumni</a></li> -->
+                      @endif
+                    @endforeach
+                  </ul>
+                </li>
+              @endforeach
+            @endisset
             <li class="nav-item mx-3">
               <a class="nav-link" aria-current="page" href="#">About</a>
             </li>
+            @guest @else @if(Auth::User()->level_id == 1)
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="{{url('dashboard')}}">Halaman Admin</a>
+            </li>
+            @endif @endguest
           </ul>
         </div>
-        <button class="btn btn-primer">Login</button>
-      </div>
+        @guest
+          <a  href="{{ route('login') }}" class="btn btn-primer">Log In</a>
+        @else
+          <a  href="{{ route('logout') }}"  onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();"class="btn btn-primer">Log Out</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+        @endguest
+        </div>
     </nav>
 
     {{-- FullPage --}}
