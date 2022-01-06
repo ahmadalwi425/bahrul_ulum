@@ -138,7 +138,7 @@
     </div>
 
     {{-- Berita --}}
-    <div class="container-fluid" style="background-color: white; padding-top: 100px; padding-bottom: 100px;">
+    <div class="container-fluid" style="background-color: white; padding-top: 70px; padding-bottom: 100px;">
       <div class="container py-2 pb-5">
         <div class="row">
           <h1 class="display-3 fontJumbotron text-center pb-5">
@@ -222,6 +222,81 @@
         </div>
       </div>
     </div>
+
+    {{-- Kata Mereka --}}
+    <div class="container-fluid pt-3 pb-5 " style="background-color: #CDEEC8;">
+      <h1 class="fontJumbotron display-3 text-center my-5 py-5">Kata mereka</h1>
+      <div class="col-12 pb-5 mb-5">
+        <div class="splide3">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-4 align-self-center">
+                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
+                        </div>
+                      </div>
+                      <div class="col-8 align-self-center">
+                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center py-3">
+                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-4 align-self-center">
+                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
+                        </div>
+                      </div>
+                      <div class="col-8 align-self-center">
+                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center py-3">
+                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-4 align-self-center">
+                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
+                        </div>
+                      </div>
+                      <div class="col-8 align-self-center">
+                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center py-3">
+                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{-- footer --}}
+    <div class="container-fluid py-5" style="background-color: #C4C4C4;">
+
+    </div>
     
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -260,6 +335,15 @@
             focus: 'center'
           } );
           splide2.mount();
+          var splide3 = new Splide( '.splide3', {
+            type   : 'loop',
+            padding: '23rem',
+            gap: 50,
+            perPage: 1,
+            focus: 'center',
+            drag: 'free',
+          } );
+          splide3.mount();
         } );
     </script>
   </body>
