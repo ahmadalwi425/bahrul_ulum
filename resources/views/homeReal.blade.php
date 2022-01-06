@@ -295,7 +295,51 @@
 
     {{-- footer --}}
     <div class="container-fluid py-5" style="background-color: #C4C4C4;">
-
+      <div class="row align-items-center">
+        <div class="col-5 px-3">
+          <div class="row justifiy-content-center align-items-center">
+            <div class="col text-center">
+              <img src="{{asset('storage/img/logo.png')}}" height="80px" alt="" class="rounded-2 avatar">
+              <span class="px-3 fontBrandFooter">Yayasan Bahrul Ulum</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-3">
+          <div class="row justify-content-center">
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">Home</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">TK</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SD</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">Halaman Admin</a></col-12>
+          </div>
+        </div>
+        <div class="col-5 px-3">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row my-2 justify-content-center">
+                <div class="col text-center">
+                  <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="ant-design:instagram-filled"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row my-2">
+                <div class="col text-center">
+                <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="dashicons:facebook"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+              </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row my-2">
+                <div class="col text-center">
+                <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="fa-brands:twitter-square"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- Optional JavaScript; choose one of the two! -->
@@ -315,6 +359,8 @@
     <script src="{{asset('js/jquery.pagepiling.js')}}" ></script>
     {{-- splide --}}
     <script src="{{asset('js/splide.js')}}" ></script>
+    {{-- iconify --}}
+    <script src="{{asset('js/iconify.min.js')}}"></script>
 
     <script>
         document.addEventListener( 'DOMContentLoaded', function() {

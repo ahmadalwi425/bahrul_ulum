@@ -34,3 +34,29 @@
     font-family: fontJumbotron, Calibri;
     color: #235339;
 }
+
+.fontBrandFooter {
+    font-family: fontJumbotron, Calibri;
+    color: #235339;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.fontNavFooter {
+    font-family: fontNavbar, Calibri;
+    font-size: 16px;
+    font-weight: 500;
+    color: black; 
+    text-decoration: none;
+}
+
+.iconFooter {
+    color: #444444;
+    font-size: 25px;
+}
+
+.fontSosmedFooter {
+    font-family: fontJumbotron, Calibri;
+    font-size: 18px;
+    color: #444444;
+}
