@@ -86,7 +86,8 @@
     </nav>
 
     {{-- FullPage --}}
-    <div style="padding: 0; padding-top: 40px" class="container-fluid mt-7">
+    <div class="container-fluid" style="background-color: #CDEEC8;">
+    <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
         <div class="col-12">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
             <div class="carousel-indicators">
@@ -116,6 +117,7 @@
           </div>
         </div>
     </div>
+  </div>
 
     {{-- About --}}
     <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
@@ -139,40 +141,34 @@
     <div class="container-fluid" style="background-color: white; padding-top: 100px; padding-bottom: 100px;">
       <div class="container py-2 pb-5">
         <div class="row">
-          <h1 class="display-3 fontJumbotron text-center">
+          <h1 class="display-3 fontJumbotron text-center pb-5">
             Berita Terkini
           </h1>
           <div class="col-12">
             <div class="splide">
-              <div class="splide__track">
+              <div class="splide__track pb-5">
                 <ul class="splide__list">
-                  <li class="splide__slide">\
+                  <li class="splide__slide">
                     <div class="card">
-                      <div class="card-body">
-                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      </div>
-                      <div class="card-footer">
-                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
                       </div>
                     </div>
                   </li>
-                  <li class="splide__slide">\
+                  <li class="splide__slide">
                     <div class="card">
-                      <div class="card-body">
-                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      </div>
-                      <div class="card-footer">
-                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
                       </div>
                     </div>
                   </li>
-                  <li class="splide__slide">\
+                  <li class="splide__slide">
                     <div class="card">
-                      <div class="card-body">
-                        <img class="img-fluid" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      </div>
-                      <div class="card-footer">
-                        <p class="fontUpJumbotron text-center">PPDB 2021</p>
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
                       </div>
                     </div>
                   </li>
@@ -185,7 +181,47 @@
     </div>
 
     {{-- Program Kami --}}
-    <div class="container-fluid" style="background-color: #C4C4C4; padding-top: 100px; padding-bottom: 100px;"></div>
+    <div class="container-fluid" style="background-color: #C4C4C4; padding-top: 100px; padding-bottom: 100px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-12">
+            <h1 class="display-3 fontJumbotron">Program Kami</h1>
+          </div>
+          <div class="col-lg-8 col-12">
+            <div class="splide2">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="card border-0" onclick="location.href='newurl.html';">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron">PPDB 2021</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="card border-0" onclick="location.href='newurl.html';">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron">PPDB 2021</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="card border-0" onclick="location.href='newurl.html';">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 3.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron">PPDB 2021</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -216,6 +252,14 @@
             autoplay: true
           } );
           splide.mount();
+          var splide2 = new Splide( '.splide2', {
+            type   : 'loop',
+            gap: 20,
+            padding: '5rem',
+            perPage: 1,
+            focus: 'center'
+          } );
+          splide2.mount();
         } );
     </script>
   </body>
