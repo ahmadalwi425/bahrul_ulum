@@ -91,7 +91,8 @@
           <h1 class="display-3 fontJumbotron">Selamat Datang</h1>
           <span class="display-6 fontJumbotron mb-5">di Halaman Pendaftaran</span>
           <p class="fontNavFooter text-danger text-end mb-5">Silahkan lengkapi formulir di bawah ini !</p>
-          <form action="" method="post">
+          <form method="POST" action="{{ url('pendaftaran/store') }}">
+            @csrf
             {{-- section 1 --}}
             <div class="row">
               <div class="col-lg mb-3 col-12">
@@ -191,9 +192,13 @@
                 </div>
               </div>
               <div class="row mb-5">
-                <div class="col-lg-6 col-12 mb-3">
+                <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_pembiaya" class="form-label fontFormRegister">Pembiaya</label>
                   <input name="pendaftaran_pembiaya" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_kepala_keluarga" class="form-label fontFormRegister">Keluarga</label>
+                  <input name="pendaftaran_kepala_keluarga" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
                 </div>
                 <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_media_sosial" class="form-label fontFormRegister">Media Sosial</label>
@@ -240,7 +245,7 @@
             </div>
 
             <div class="col mt-5 col-12 text-end">
-              <button class="btn btn-primer font-primer-b px-3 py-2">Daftar</button>
+              <button class="btn btn-primer font-primer-b px-3 py-2">Daftarr</button>
             </div>
 
           </form>
