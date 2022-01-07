@@ -90,19 +90,21 @@
         <div class="row">
           <h1 class="display-3 fontJumbotron">Selamat Datang</h1>
           <span class="display-6 fontJumbotron mb-5">di Halaman Pendaftaran</span>
+          <p class="fontNavFooter text-danger text-end mb-5">Silahkan lengkapi formulir di bawah ini !</p>
           <form action="" method="post">
-            <div class="row mb-3">
-              <div class="col">
+            {{-- section 1 --}}
+            <div class="row">
+              <div class="col-lg mb-3 col-12">
                 <label for="pendaftaran_nama" class="form-label fontFormRegister">Nama Lengkap</label>
                 <input name="pendaftaran_nama" type="text" class="form-control font-primer" placeholder="(Ahmad)" aria-label="Nama" autofocus>
               </div>
-              <div class="col">
+              <div class="col-lg mb-3 col-12">
                 <label for="pendaftaran_nisn" class="form-label fontFormRegister">NISN</label>
                 <input name="pendaftaran_nisn" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
               </div>
             </div>
-            <div class="row mb-3">
-              <div class="col">
+            <div class="row">
+              <div class="col-lg mb-3 col-12">
                 <label class="form-label fontFormRegister" for="pendaftaran_jenis_kelamin">Jenis Kelamin</label>
                 <select class="form-select font-primer" id="pendaftaran_jenis_kelamin">
                   <option selected disabled>Pilih salah satu...</option>
@@ -110,10 +112,60 @@
                   <option value="P">Perempuan</option>
                 </select>
               </div>
-              <div class="col">
-                <label for="pendaftaran_nisn" class="form-label fontFormRegister">NISN</label>
-                <input name="pendaftaran_nisn" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
+              <div class="col-lg mb-3 col-12">
+                <label for="pendaftaran_no_kip" class="form-label fontFormRegister">No KIP</label>
+                <input name="pendaftaran_no_kip" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
               </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-lg mb-3 col-12">
+                <label for="pendaftaran_tempat_lahir" class="form-label fontFormRegister">Tempat Lahir</label>
+                <input name="pendaftaran_tempat_lahir" type="number" class="form-control font-primer" placeholder="(08123456xxx)" aria-label="Last name">
+              </div>
+              <div class="col-lg mb-3 col-12">
+                <label for="pendaftaran_tanggal_lahir" class="form-label fontFormRegister">Tanggal Lahir</label>
+                <input name="pendaftaran_tanggal_lahir" type="number" class="datepicker form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
+              </div>
+            </div>
+            <hr>
+
+            {{-- section 2 --}}
+            <div class="col mt-5 mb-3 col-12">
+              <div class="row">
+                <div class="col">
+                  <label for="pendaftaran_alamat" class="form-label fontFormRegister">Alamat</label>
+                  <textarea class="form-control font-primer" name="pendaftaran_alamat" id="" cols="30" rows="5" placeholder="(Jl. Tajinan)"></textarea>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="pendaftaran_kelurahan" class="form-label fontFormRegister">Kecamatan</label>
+                    <input name="pendaftaran_kelurahan" type="text" class="datepicker form-control font-primer" placeholder="(Tajinan)" aria-label="kecamatan">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pendaftaran_kecamatan" class="form-label fontFormRegister">Kelurahan</label>
+                    <input name="pendaftaran_kecamatan" type="text" class="datepicker form-control font-primer" placeholder="(Tajinan)" aria-label="kecamatan">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 mb-3 col-12">
+                  <label for="pendaftaran_kode_pos" class="form-label fontFormRegister">Kode POS</label>
+                  <input name="pendaftaran_kode_pos" type="number" class="form-control font-primer" placeholder="(651xx)" aria-label="Last name">
+                </div>
+                <div class="col-lg-4 mb-3 col-12">
+                  <label for="pendaftaran_kota" class="form-label fontFormRegister">Kota</label>
+                  <input name="pendaftaran_kota" type="text" class="form-control font-primer" placeholder="(Malang)" aria-label="Last name">
+                </div>
+                <div class="col-lg-4 mb-3 col-12">
+                  <label for="pendaftaran_tempat_lahir" class="form-label fontFormRegister">Provinsi</label>
+                  <input name="pendaftaran_tempat_lahir" type="text" class="form-control font-primer" placeholder="(Jawa Timur)" aria-label="Last name">
+                </div>
+              </div>
+            </div>
+            
+            {{-- section3 --}}
+            <div class="col mt-5 mb-3 col-12">
+              
             </div>
           </form>
         </div>
