@@ -15,7 +15,7 @@ class pendaftaranController extends Controller
      */
     public function index()
     {
-        return view('non-auth.pendaftaran');
+        return view('register');
     }
 
     /**

@@ -66,6 +66,9 @@
             <li class="nav-item mx-3">
               <a class="nav-link" aria-current="page" href="#">About</a>
             </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="#">Pendaftaran</a>
+            </li>
             @guest @else @if(Auth::User()->level_id == 1)
             <li class="nav-item mx-3">
               <a class="nav-link" aria-current="page" href="{{url('dashboard')}}">Halaman Admin</a>
@@ -87,37 +90,37 @@
 
     {{-- FullPage --}}
     <div class="container-fluid" style="background-color: #CDEEC8;">
-    <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
-        <div class="col-12">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
+          <div class="col-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="img-fluid" style="max-height: 50%" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="img-fluid" style="max-height: 50%" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-        </div>
+      </div>
     </div>
-  </div>
 
     {{-- About --}}
     <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
@@ -146,7 +149,7 @@
           </h1>
           <div class="col-12">
             <div class="splide">
-              <div class="splide__track pb-5">
+              <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">
                     <div class="card">

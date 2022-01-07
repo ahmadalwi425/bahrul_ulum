@@ -60,3 +60,20 @@
     font-size: 18px;
     color: #444444;
 }
+
+.fontFormRegister {
+    font-family: fontJumbotron, Calibri;
+    font-size: 19px;
+    color: #235339;
+    padding: 0;
+    margin: 0;
+}
+
+.font-primer {
+    font-family: fontNavbar, Calibri;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #235339 !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(26, 88, 70, 0.5) !important;
+}
