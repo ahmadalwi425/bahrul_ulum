@@ -161,12 +161,88 @@
                   <input name="pendaftaran_tempat_lahir" type="text" class="form-control font-primer" placeholder="(Jawa Timur)" aria-label="Last name">
                 </div>
               </div>
+              <div class="row mb-5">
+                <div class="col-lg-4 mb-3 col-12">
+                  <label for="pendaftaran_status_tempat_tinggal" class="form-label fontFormRegister">Status Tempat Tinggal</label>
+                  <input name="pendaftaran_status_tempat_tinggal" type="text" class="form-control font-primer" placeholder="(Kontrak)" aria-label="Last name">
+                </div>
+              </div>
             </div>
+            <hr>
             
             {{-- section3 --}}
             <div class="col mt-5 mb-3 col-12">
-              
+              <div class="row">
+                <div class="col-3 mb-3">
+                  <label for="pendaftaran_anak_ke" class="form-label fontFormRegister">Anak Ke-</label>
+                  <input name="pendaftaran_anak_ke" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-3 mb-3">
+                  <label for="pendaftaran_jumlah_saudara" class="form-label fontFormRegister">Jumlah Saudara</label>
+                  <input name="pendaftaran_jumlah_saudara" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-3 mb-3">
+                  <label for="pendaftaran_cita_cita" class="form-label fontFormRegister">Cita-cita</label>
+                  <input name="pendaftaran_cita_cita" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-3 mb-3">
+                  <label for="pendaftaran_hobi" class="form-label fontFormRegister">Hobi</label>
+                  <input name="pendaftaran_hobi" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="pendaftaran_pembiaya" class="form-label fontFormRegister">Pembiaya</label>
+                  <input name="pendaftaran_pembiaya" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_media_sosial" class="form-label fontFormRegister">Media Sosial</label>
+                  <input name="pendaftaran_media_sosial" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_kewarganegaraan" class="form-label fontFormRegister">Kewarganegaraan</label>
+                  <input name="pendaftaran_kewarganegaraan" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
             </div>
+            <hr>
+            
+            {{-- section-4 --}}
+            <div class="col mt-5 mb-3 col-12">
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_pernah_paud" class="form-label fontFormRegister">Pernah PAUD</label>
+                  <input name="pendaftaran_pernah_paud" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_pernah_tk" class="form-label fontFormRegister">Pernah TK</label>
+                  <input name="pendaftaran_pernah_tk" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="pendaftaran_kebutuhan_disabilitas" class="form-label fontFormRegister">Kebutuhan Disabilitas</label>
+                  <input name="pendaftaran_kebutuhan_disabilitas" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_jarak_tempuh" class="form-label fontFormRegister">Jarak Tempuh</label>
+                  <input name="pendaftaran_jarak_tempuh" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="pendaftaran_waktu_tempuh" class="form-label fontFormRegister">Waktu Tempuh</label>
+                  <input name="pendaftaran_waktu_tempuh" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="pendaftaran_kebutuhan_khusus" class="form-label fontFormRegister">Kebutuhan Khusus</label>
+                  <input name="pendaftaran_kebutuhan_khusus" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+            </div>
+
+            <div class="col mt-5 col-12 text-end">
+              <button class="btn btn-primer font-primer-b px-3 py-2">Daftar</button>
+            </div>
+
           </form>
         </div>
       </div>

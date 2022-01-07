@@ -73,7 +73,15 @@
     font-family: fontNavbar, Calibri;
 }
 
+.font-primer-b {
+    font-family: fontJumbotron, Calibri;
+}
+
 .form-control:focus, .form-select:focus {
     border-color: #235339 !important;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(26, 88, 70, 0.5) !important;
+}
+
+.form-control, .form-select {
+    border: none !important;
 }
