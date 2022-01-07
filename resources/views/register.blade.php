@@ -118,6 +118,16 @@
                 <input name="pendaftaran_no_kip" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg mb-3 col-12">
+                <label for="pendaftaran_no_kk" class="form-label fontFormRegister">No KK</label>
+                <input name="pendaftaran_no_kk" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
+              </div>
+              <div class="col-lg mb-3 col-12">
+                <label for="pendaftaran_no_hp" class="form-label fontFormRegister">No HP</label>
+                <input name="pendaftaran_no_hp" type="number" class="form-control font-primer" placeholder="(20123210xxx)" aria-label="Last name">
+              </div>
+            </div>
             <div class="row mb-5">
               <div class="col-lg mb-3 col-12">
                 <label for="pendaftaran_tempat_lahir" class="form-label fontFormRegister">Tempat Lahir</label>
@@ -158,8 +168,8 @@
                   <input name="pendaftaran_kota" type="text" class="form-control font-primer" placeholder="(Malang)" aria-label="Last name">
                 </div>
                 <div class="col-lg-4 mb-3 col-12">
-                  <label for="pendaftaran_tempat_lahir" class="form-label fontFormRegister">Provinsi</label>
-                  <input name="pendaftaran_tempat_lahir" type="text" class="form-control font-primer" placeholder="(Jawa Timur)" aria-label="Last name">
+                  <label for="pendaftaran_provinsi" class="form-label fontFormRegister">Provinsi</label>
+                  <input name="pendaftaran_provinsi" type="text" class="form-control font-primer" placeholder="(Jawa Timur)" aria-label="Last name">
                 </div>
               </div>
               <div class="row mb-5">
@@ -203,6 +213,7 @@
                 <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_media_sosial" class="form-label fontFormRegister">Media Sosial</label>
                   <input name="pendaftaran_media_sosial" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                  <input name="lembaga_id" type="number" class="form-control font-primer" placeholder="" aria-label="Last name" value=1>
                 </div>
                 <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_kewarganegaraan" class="form-label fontFormRegister">Kewarganegaraan</label>
