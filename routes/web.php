@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homeReal');
-});
+Route::get('/', [App\Http\Controllers\nonauthController::class, 'index']);
+Route::get('/registrasi', [App\Http\Controllers\nonauthController::class, 'registrasi']);
 
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\adminController::class, 'dashboard']);

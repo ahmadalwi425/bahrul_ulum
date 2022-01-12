@@ -67,7 +67,7 @@
               <a class="nav-link" aria-current="page" href="#">About</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="#">Pendaftaran</a>
+              <a class="nav-link" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
             </li>
             @guest @else @if(Auth::User()->level_id == 1)
             <li class="nav-item mx-3">
@@ -151,30 +151,16 @@
             <div class="splide">
               <div class="splide__track">
                 <ul class="splide__list">
+                  @foreach($data as $row)
                   <li class="splide__slide">
                     <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
+                        <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                       </div>
                     </div>
                   </li>
-                  <li class="splide__slide">
-                    <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB 2021</span>
-                      </div>
-                    </div>
-                  </li>
+                  @endforeach
                 </ul>
               </div>
             </div>
