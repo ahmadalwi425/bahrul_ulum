@@ -139,6 +139,12 @@
         <span class="nav-link-text">Berita</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
+      </a>
+    </li>
     @elseif($nav == "siswa")
     <li class="nav-item">
       <a class="nav-link" href="{{url('dashboard')}}">
@@ -168,6 +174,12 @@
       <a class="nav-link" href="{{url('admin/berita')}}">
         <i class="fa fa-quote-right text-blue"></i>
         <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
       </a>
     </li>
     @elseif($nav == "pendaftaran")
@@ -201,6 +213,12 @@
         <span class="nav-link-text">Berita</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
+      </a>
+    </li>
     @elseif($nav == "lembaga" || $nav == "menu")
     <li class="nav-item">
       <a class="nav-link" href="{{url('dashboard')}}">
@@ -230,6 +248,12 @@
       <a class="nav-link" href="{{url('admin/berita')}}">
         <i class="fa fa-quote-right text-blue"></i>
         <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
       </a>
     </li>
     @elseif($nav == "berita")
@@ -263,7 +287,66 @@
         <span class="nav-link-text text-dark">Berita</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
+      </a>
+    </li>
+    @elseif($nav == "kata mereka")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-white"></i>
+        <span class="nav-link-text">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-red"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text text-dark">Kata Mereka</span>
+      </a>
+    </li>
     @endif
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('/')}}">
+        <i class="fa fa-cog text-purple"></i>
+        <span class="nav-link-text">Cek Website</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('logout') }}"  onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+        <i class="fa fa-sign-out text-red"></i>
+        <span class="nav-link-text">Logout</span>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+      </a>
+    </li>
 
     <!-- <li class="nav-item">
       <a class="nav-link" href="{{url('admin')}}/buletin">

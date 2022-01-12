@@ -89,6 +89,14 @@
     </nav>
 
     {{-- FullPage --}}
+    <div class="flash-message">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+
+        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+        @endif
+      @endforeach
+    </div> <!-- end .flash-message -->
     <div class="container-fluid" style="background-color: #CDEEC8;">
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
@@ -219,63 +227,27 @@
         <div class="splide3">
           <div class="splide__track">
             <ul class="splide__list">
+              @foreach($data2 as $row)
               <li class="splide__slide">
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-4 align-self-center">
                         <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
+                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
                         </div>
                       </div>
                       <div class="col-8 align-self-center">
-                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
+                        <p class="fontJumbotronUp text-center fontUpJumbotron">{{$row->kata}}</p>
                       </div>
                     </div>
                   </div>
                   <div class="card-footer text-center py-3">
-                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
+                    <span class="fontNameTesti">{{$row->nama}}</span>
                   </div>
                 </div>
               </li>
-              <li class="splide__slide">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-4 align-self-center">
-                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
-                        </div>
-                      </div>
-                      <div class="col-8 align-self-center">
-                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer text-center py-3">
-                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-4 align-self-center">
-                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/logo.png') }}" alt="Card image cap">
-                        </div>
-                      </div>
-                      <div class="col-8 align-self-center">
-                        <p class="fontJumbotronUp text-center fontUpJumbotron">Pendidikan dengan kualitas terbaik.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer text-center py-3">
-                    <span class="fontNameTesti">Rizal Ammar - AMC</span>
-                  </div>
-                </div>
-              </li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -300,7 +272,7 @@
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SD</a></col-12>
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">Halaman Admin</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Feedback</a></col-12>
           </div>
         </div>
         <div class="col-5 px-3">
@@ -308,21 +280,21 @@
             <div class="col-12">
               <div class="row my-2 justify-content-center">
                 <div class="col text-center">
-                  <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="ant-design:instagram-filled"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+                  <a href="https://www.instagram.com/gemabahrululumtjn/" style="text-decoration: none;"><span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="ant-design:instagram-filled"></span><span class="fontSosmedFooter">@gemabahrululumtjn</span></span></a>
                 </div>
               </div>
             </div>
             <div class="col-12">
               <div class="row my-2">
                 <div class="col text-center">
-                <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="dashicons:facebook"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+                <a href="https://web.facebook.com/bahrululumtajinan" style="text-decoration: none;"><span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="dashicons:facebook"></span><span class="fontSosmedFooter">@bahrululumtajinan</span></span></a>
               </div>
               </div>
             </div>
             <div class="col-12">
               <div class="row my-2">
                 <div class="col text-center">
-                <span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="fa-brands:twitter-square"></span><span class="fontSosmedFooter">Bahrul Ulum</span></span>
+                <a href="https://twitter.com/mabutama" style="text-decoration: none;"><span class="text-start"><span class="iconify iconFooter text-center d-inline-block mx-2" data-icon="fa-brands:twitter-square"></span><span class="fontSosmedFooter">@mabutama</span></span></a>
               </div>
               </div>
             </div>

@@ -63,7 +63,7 @@
               <a class="nav-link" aria-current="page" href="#">About</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="#">Pendaftaran</a>
+              <a class="nav-link" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
             </li>
             @guest @else @if(Auth::User()->level_id == 1)
             <li class="nav-item mx-3">
@@ -299,7 +299,7 @@
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SD</a></col-12>
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
             <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">Halaman Admin</a></col-12>
+            <col-12 class="text-start my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Feedback</a></col-12>
           </div>
         </div>
         <div class="col-5 px-3">

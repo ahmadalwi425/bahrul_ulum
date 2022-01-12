@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\nonauthController::class, 'index']);
 Route::get('/registrasi', [App\Http\Controllers\nonauthController::class, 'registrasi']);
+Route::get('/feedback', [App\Http\Controllers\nonauthController::class, 'feedback']);
+Route::post('/feedback/store', [App\Http\Controllers\nonauthController::class, 'feedbackStore']);
 
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\adminController::class, 'dashboard']);
@@ -30,6 +32,8 @@ Route::get('/admin/pendaftaran/ditolak/{id}', [App\Http\Controllers\adminControl
 Route::get('/admin/lembaga/menu/{id}', [App\Http\Controllers\menuController::class, 'index']);
 Route::get('/admin/lembaga/destroy/{id}', [App\Http\Controllers\lembagaController::class, 'destroy']);
 Route::get('/admin/lembaga', [App\Http\Controllers\lembagaController::class, 'index']);
+Route::get('/admin/lembaga/create', [App\Http\Controllers\lembagaController::class, 'create']);
+Route::post('/admin/lembaga/store', [App\Http\Controllers\lembagaController::class, 'store']);
 Route::get('/admin/pendaftaran', [App\Http\Controllers\adminController::class, 'pendaftaran']);
 Route::get('/admin/siswa', [App\Http\Controllers\adminController::class, 'siswa']);
 Route::get('/admin/siswa/detail/{id}', [App\Http\Controllers\adminController::class, 'siswaDetail']);
@@ -47,3 +51,7 @@ Route::post('/admin/berita/store', [App\Http\Controllers\beritaController::class
 Route::get('/admin/berita/edit/{id}', [App\Http\Controllers\beritaController::class, 'edit']);
 Route::put('/admin/berita/update/{id}', [App\Http\Controllers\beritaController::class, 'update']);
 Route::get('/admin/berita/destroy/{id}', [App\Http\Controllers\beritaController::class, 'destroy']);
+Route::get('/admin/kata_mereka', [App\Http\Controllers\kata_merekaController::class, 'index']);
+Route::get('/admin/kata_mereka/verify/{id}', [App\Http\Controllers\kata_merekaController::class, 'verify']);
+Route::get('/admin/kata_mereka/unverify/{id}', [App\Http\Controllers\kata_merekaController::class, 'unverify']);
+Route::get('/admin/kata_mereka/destroy/{id}', [App\Http\Controllers\kata_merekaController::class, 'destroy']);

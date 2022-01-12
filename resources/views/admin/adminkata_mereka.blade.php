@@ -7,15 +7,16 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-3">User</h6>
+            <h6 class="h2 text-white d-inline-block mb-3">kata mereka</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
                   <a href="{{url('/admin')}}"><i class="fa fa-home text-primary"></i> Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">lembaga</li>
+                  <li class="breadcrumb-item active" aria-current="page">pendaftaran</li>
               </ol>
             </nav>
           </div>
+          
           {{-- <div class="col-lg-6 col-5 text-right">
             <a href="#" class="btn btn-sm btn-neutral">New</a>
             <a href="#" class="btn btn-sm btn-neutral">Filters</a>
@@ -35,18 +36,19 @@
             <div class="mb-0 pb-0 row justify-content-between">
               <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <a href="{{url('admin/lembaga/create')}}" type="button" class="btn-success btn col-lg-3 col-12 mt-3 mt-lg-0 mb-0">
+              <!-- <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
-                    <i class="fa fa-plus text-white text-md m-0 pt-1 text-lg"></i> 
+                    <i class="ni ni-fat-add text-white text-md m-0 pt-1 text-lg"></i> 
                   </div>
                   <div class="col-6">
-                    <span class="d-inline-block pt--4">Tambah Lembaga</span>
+                    <span class="d-inline-block pt--4">Tambah</span>
                   </div>
                 </div>
-              </a>
+              </button> -->
             </div>
+            <br>
           </div>
           <!-- Light table -->
           <div class="card-body pt-0">
@@ -56,39 +58,34 @@
                   <tr>
                     <th scope="col" class="sort" data-sort="name">No</th>
                     <th scope="col" class="sort" data-sort="name">Nama</th>
-                    <th scope="col" class="sort" data-sort="completion">Menu</th>
-                    <th scope="col" class="sort" data-sort="completion">Aksi</th>
+                    <th scope="col" class="sort" data-sort="completion">Foto</th>
+                    <th scope="col" class="sort" data-sort="completion">Feedback</th>
+                    <th scope="col" class="sort" data-sort="completion">Status</th>
+                    <th scope="col" class="sort" data-sort="completion">Change Status</th>
                   </tr>
                 </thead>
                 <tbody class="list">                    
                     @foreach($data as $row)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$row->lembaga_nama}}</td>
+                        <td>{{$row->nama}}</td>
+                        <td><img src="{{asset('storage/'.$row->foto)}}" alt="" style="width:200px;height:100px;"></td>
+                        <td>{{$row->kata}}</td>
+                        <td>{{$row->status}}</td>
                         <td>
-                        <a href="{{ url('admin/lembaga/menu',$row->id) }}" class="badge badge-dot mr-4">
-                          <button class="btn btn-primary" type="button"><i class="fa fa-desktop text-white mt--2 mr-3"></i> Menu</button>
+                        @if($row->status == "unverified")
+                        <a href="{{ url('admin/kata_mereka/verify',$row->id) }}" class="badge badge-dot mr-4">
+                            <button class="btn btn-success" type="button"><i class="fa fa-check text-white mt--2 mr-3"></i> Verify</button>
                         </a>
-                        </td>
-                        <td>
-                        <a href="{{ url('admin/lembaga/edit',$row->id) }}" class="badge badge-dot mr-4">
-                        <button class="btn btn-warning" type="button"><i class="ni ni-ruler-pencil text-white mt--2 mr-3"></i> Edit</button>
+                        @else
+                        <a href="{{ url('admin/kata_mereka/unverify',$row->id) }}" class="badge badge-dot mr-4">
+                            <button class="btn btn-warning" type="button"><i class="fa fa-times text-white mt--2 mr-3"></i> Un-Verify</button>
                         </a>
-                        <span class="badge badge-dot mr-4">
-                        <a class="btn btn-danger" href="{{ url('admin/lembaga/destroy',$row->id) }}" onclick="del(event);">
-                          <div class="row justify-content-center align-items-center">
-                            <div class="col-1">
-                              <i class="ni ni-fat-remove text-white mt--4 ml--3 text-xl"></i> 
-                            </div>
-                            <div class="col-6">
-                              <span class="ml--3">
-                                Delete
-                              </span>
-                            </div>
-                          </div>
+                        @endif
+                        <a href="{{ url('admin/kata_mereka/destroy',$row->id) }}" class="badge badge-dot mr-4">
+                            <button class="btn btn-danger" type="button"><i class="fa fa-trash text-white mt--2 mr-3"></i> Delete</button>
                         </a>
-                      </span>
-                        </td>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>
