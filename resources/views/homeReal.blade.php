@@ -8,6 +8,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pondok Pesantren Bahrul Ulum Tajinan - Home" />
+    <meta name="robots" content="Bahrul Ulum, Bahrul Ulum Tajinan, " />
+    <meta name="author" content="SantriNgoding">
+    <link rel="icon" href="{{asset('storage/img/logo.png')}}" type="image/png">
 
     {{-- My File --}}
     <link rel="stylesheet" href="{{asset('css/BuHomepage.css')}}">
@@ -31,7 +35,7 @@
     <nav style="z-index: 99; padding:4px" class="fontNavbar navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container d-flex justify-content-between">
         <a class="navbar-brand" href="#">
-          <img src="{{asset('storage/img/logo.png')}}" alt="" height="50">    
+          <img loading="lazy" src="{{asset('storage/img/logo.png')}}" alt="" height="50">    
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,9 +63,6 @@
                 </li>
               @endforeach
             @endisset
-            <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="#">About</a>
-            </li>
             <li class="nav-item mx-3">
               <a class="nav-link" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
             </li>
@@ -98,9 +99,9 @@
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
               <div class="your-class">
-                <div><img src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 1.jpg')}}"></div>
-                <div><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+                <div><img loading="lazy" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 1.jpg')}}"></div>
+                <div><img loading="lazy" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
+                <div><img loading="lazy" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
               </div>
           </div>
       </div>
@@ -138,7 +139,7 @@
                   @foreach($data as $row)
                   <li class="splide__slide">
                     <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
                         <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                       </div>
@@ -157,7 +158,7 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
                         <span class="fontUpJumbotron text-center">PPDB</span>
                       </div>
@@ -165,7 +166,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
                         <span class="fontUpJumbotron text-center">PPDB</span>
                       </div>
@@ -173,7 +174,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="card">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
                         <span class="fontUpJumbotron text-center">PPDB</span>
                       </div>
@@ -192,7 +193,7 @@
             <div class="responsive">
               @foreach($data as $row)
               <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                 </div>
@@ -215,31 +216,31 @@
           margin-left: -20px" class="col-lg-8 col-12">
             <div class="program-kami">
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron">PPDB 2021</span>
                 </div>
               </div>
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron">PPDB 2021</span>
                 </div>
               </div>
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron">PPDB 2021</span>
                 </div>
               </div>
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron">PPDB 2021</span>
                 </div>
               </div>
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron">PPDB 2021</span>
                 </div>
@@ -260,7 +261,7 @@
             <div class="row">
               <div class="col-lg-5 col-12 align-self-center text-center">
                 <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-3 mx-auto text-center" width="130px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
+                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
                 </div>
               </div>
               <div class="col-lg-7 col-12 align-self-center">
@@ -282,7 +283,7 @@
         <div class="col-lg-5 col-12 px-3">
           <div class="row justifiy-content-center align-items-center">
             <div class="col align-items-center text-center">
-              <img src="{{asset('storage/img/logo.png')}}" height="80px" alt="" class="rounded-2 avatar col-lg">
+              <img loading="lazy" src="{{asset('storage/img/logo.png')}}" height="80px" alt="" class="rounded-2 avatar col-lg">
               <span class="col-lg col-12 px-3 fontBrandFooter">Yayasan Bahrul Ulum</span>
             </div>
           </div>
@@ -352,6 +353,16 @@
     
 
     <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y7HCNLNGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3Y7HCNLNGY');
+    </script>
 
     <script>
       // carousel jumbotron
