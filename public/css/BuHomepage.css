@@ -122,3 +122,19 @@ html, body {
     .slick-active {
         z-index: 99;
     }
+
+
+    .slick-prev {
+        width: 100px;
+    }
+    .slick-prev:before {
+  content: "<";
+  color: red;
+  font-size: 30px;
+}
+
+.slick-next:before {
+  content: ">";
+  color: red;
+  font-size: 30px;
+}

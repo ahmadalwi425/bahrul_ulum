@@ -21,17 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/slick.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/slick-theme.css')}}"/>
 
-    {{-- splide --}}
-    {{-- <link rel="stylesheet" href="{{asset('css/splide.min.css')}}">
-    <link rel="stylesheet" href=""> --}}
+    <link href="{{asset('css/all.css')}}" rel="stylesheet">
 
-    {{-- pagepilling.css
-    <link rel="stylesheet" href="{{asset('css/jquery.pagepiling.css')}}">
-    
-    {{-- skippr.css --}}
-    {{-- <link rel="stylesheet" href="{{asset('css/skippr.css')}}">
-    <link rel="stylesheet" href="{{asset('css/reset.css')}}">  --}}
-    
     <title>Pondok Pesantren Bahrul Ulum - Homepage</title>
   </head>
   <body>
@@ -106,55 +97,9 @@
     <div class="container-fluid" style="background-color: #CDEEC8;">
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
-            {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="img-fluid" style="max-height: 50%" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                </div>
-                <div class="carousel-item">
-                  <img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}">
-                </div>
-                <div class="carousel-item">
-                  <img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div> --}}
-            {{-- <!-- Slider main container -->
-            <div class="swiper">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                ...
-              </div>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination"></div>
-
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-
-              <!-- If we need scrollbar -->
-              <div class="swiper-scrollbar"></div>
-            </div> --}}
               <div class="your-class">
-                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
-                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+                <div><img src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 1.jpg')}}"></div>
+                <div><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
                 <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
               </div>
           </div>
@@ -245,36 +190,14 @@
               </button>
             </div> --}}
             <div class="responsive">
+              @foreach($data as $row)
               <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <img class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
                 <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">PPDB</span>
+                  <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                 </div>
               </div>
-              <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">PPDB</span>
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">PPDB</span>
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">PPDB</span>
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">PPDB</span>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -290,36 +213,6 @@
           </div>
           <div style="
           margin-left: -20px" class="col-lg-8 col-12">
-            {{-- <div class="splide2">
-              <div class="splide__track">
-                <ul class="splide__list">
-                  <li class="splide__slide">
-                    <div class="card border-0" onclick="location.href='newurl.html';">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron">PPDB 2021</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="card border-0" onclick="location.href='newurl.html';">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron">PPDB 2021</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="splide__slide">
-                    <div class="card border-0" onclick="location.href='newurl.html';">
-                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 3.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron">PPDB 2021</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> --}}
             <div class="program-kami">
               <div class="card border-0" onclick="location.href='newurl.html';">
                 <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
@@ -361,118 +254,25 @@
     <div class="container-fluid pt-3 pb-5 " style="background-color: #CDEEC8;">
       <h1 class="fontJumbotron display-3 text-center my-5 py-5">Kata mereka</h1>
       <div class="kata-mereka container col-12 pb-5 mb-5">
-        {{-- <div class="splide3">
-          <div class="splide__track">
-            <ul class="splide__list">
-              @foreach($data2 as $row)
-              <li class="splide__slide">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-4 align-self-center">
-                        <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                          <img class="rounded-2 text-center" height="100px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
-                        </div>
-                      </div>
-                      <div class="col-8 align-self-center">
-                        <p class="fontJumbotronUp text-center fontUpJumbotron">{{$row->kata}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer text-center py-3">
-                    <span class="fontNameTesti">{{$row->nama}}</span>
-                  </div>
-                </div>
-              </li>
-              @endforeach
-            </ul>
-          </div>
-        </div> --}}
+        @foreach($data2 as $row)
         <div class="card">
           <div class="card-body">
             <div class="row">
-              <div class="col-4 align-self-center">
+              <div class="col-lg-5 col-12 align-self-center text-center">
                 <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                  <img class="rounded-3 mx-auto text-center" width="130px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
                 </div>
               </div>
-              <div class="col-8 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              <div class="col-lg-7 col-12 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">{{$row->kata}}</p>
               </div>
             </div>
           </div>
           <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">ss</span>
+            <span class="fontNameTesti">{{$row->nama}}</span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-4 align-self-center">
-                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-8 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">ss</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-4 align-self-center">
-                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-8 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">ss</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-4 align-self-center">
-                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-8 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">ss</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-4 align-self-center">
-                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-8 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">ss</span>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
 
@@ -547,14 +347,13 @@
     {{-- <script src="{{asset('js/splide.js')}}" ></script> --}}
     {{-- iconify --}}
     <script src="{{asset('js/iconify.min.js')}}"></script>
+    
+    <script src="{{asset('js/all.js')}}"></script>
+    
 
     <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
 
     <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel();
-      });
-
       // carousel jumbotron
       $(document).ready(function(){
         $('.your-class').slick();
@@ -567,6 +366,7 @@
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 3,
+        
         responsive: [
           {
             breakpoint: 1024,
@@ -603,6 +403,8 @@
         centerPadding: '100px',
         slidesToShow: 3,
         variableWidth: true,
+        arrows:true,
+        dots: true, 
         responsive: [
           {
             breakpoint: 768,
@@ -627,7 +429,7 @@
 
       // Carousel program Kami
       $('.kata-mereka').slick({
-        centerMode: true,
+        centerMode: false,
         centerPadding: '30px',
         slidesToShow: 3,
         responsive: [
@@ -635,16 +437,16 @@
             breakpoint: 768,
             settings: {
               arrows: false,
-              centerMode: true,
+              centerMode: false,
               centerPadding: '40px',
-              slidesToShow: 3
+              slidesToShow: 2
             }
           },
           {
             breakpoint: 480,
             settings: {
               arrows: false,
-              centerMode: true,
+              centerMode: false,
               centerPadding: '40px',
               slidesToShow: 1
             }
