@@ -11,6 +11,10 @@
     src: url(font/Montserrat-Bold.ttf);
 }
 
+html, body {
+    width: 100%;
+}
+
 .fontNavbar {
     font-family: fontNavbar, Calibri;
 }
@@ -85,3 +89,36 @@
 .form-control, .form-select {
     border: none !important;
 }
+
+/* the slides */
+.slick-slide {
+    margin: 0 40px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -40px;
+}
+.slick-center {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    transform: scale(1.25);    
+  }
+
+  .program-kami .card {
+    width: 250px;
+}
+  
+  @media screen and (min-width:800px) {
+      .program-kami .card {
+         width: 400px;
+      }
+    }
+    
+    .program-kami .slick-list { 
+       padding:45px 60px !important;
+       margin-left:30px !important;
+     }
+
+    .slick-active {
+        z-index: 99;
+    }

@@ -16,9 +16,14 @@
     <!-- Bootstrap CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" crossorigin="anonymous">
 
+    {{-- Carousel --}}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/slick-theme.css')}}"/>
+
     {{-- splide --}}
-    <link rel="stylesheet" href="{{asset('css/splide.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/splide-core.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/splide.min.css')}}">
+    <link rel="stylesheet" href=""> --}}
 
     {{-- pagepilling.css
     <link rel="stylesheet" href="{{asset('css/jquery.pagepiling.css')}}">
@@ -88,7 +93,6 @@
         </div>
     </nav>
 
-    {{-- FullPage --}}
     <div class="flash-message">
       @foreach (['danger', 'warning', 'success', 'info'] as $msg)
         @if(Session::has('alert-' . $msg))
@@ -97,10 +101,12 @@
         @endif
       @endforeach
     </div> <!-- end .flash-message -->
+
+    {{-- FullPage --}}
     <div class="container-fluid" style="background-color: #CDEEC8;">
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
+            {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -125,22 +131,47 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-            </div>
+            </div> --}}
+            {{-- <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
+                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
+                <div class="swiper-slide"><img src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
+                ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div> --}}
+              <div class="your-class">
+                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+                <div><img src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+              </div>
           </div>
       </div>
     </div>
 
     {{-- About --}}
     <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
-      <div class="container py-5">
+      <div class="container-lg  py-2 py-lg-5">
         <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center text-lg-start">
           <p class="display-6 fontUpJumbotron p-0 m-0">Selamat Datang di</p>
           <h1 class="display-3 p-0 m-0 fontJumbotron">Yayasan Bahrul Ulum</h1>
         </div>
-        <div class="col-5"></div>
-        <div class="col-7 pt-5 align-self-end">
-          <p class="fontNavbar text-end">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7 col-12 pt-5 align-self-end">
+          <p class="fontNavbar text-center text-lg-end">
             Yayasan Pondok Pesantren Bahrul Ulum merupakan yayasan yang bergerak di bidang pendidikan islam dengan dasar pondok pesantren. Yayasan ini telah memiliki jenjang pendidikan TK, SMP, SMA serta Pondok Pesantren.
           </p>
         </div>
@@ -149,14 +180,14 @@
     </div>
 
     {{-- Berita --}}
-    <div class="container-fluid" style="background-color: white; padding-top: 70px; padding-bottom: 100px;">
+    <div class="container-lg" style="background-color: white; padding-top: 70px; padding-bottom: 100px;">
       <div class="container py-2 pb-5">
         <div class="row">
           <h1 class="display-3 fontJumbotron text-center pb-5">
             Berita Terkini
           </h1>
           <div class="col-12">
-            <div class="splide">
+            {{-- <div class="splide">
               <div class="splide__track">
                 <ul class="splide__list">
                   @foreach($data as $row)
@@ -171,6 +202,79 @@
                   @endforeach
                 </ul>
               </div>
+            </div> --}}
+            {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                      <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <div class="card-footer text-center py-3">
+                        <span class="fontUpJumbotron text-center">PPDB</span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div> --}}
+            <div class="responsive">
+              <div class="card">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron text-center">PPDB</span>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron text-center">PPDB</span>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron text-center">PPDB</span>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron text-center">PPDB</span>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron text-center">PPDB</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -178,14 +282,15 @@
     </div>
 
     {{-- Program Kami --}}
-    <div class="container-fluid" style="background-color: #C4C4C4; padding-top: 100px; padding-bottom: 100px;">
-      <div class="container">
-        <div class="row align-items-center">
+    <div class="container-fluid py-5 py-lg-5" style="background-color: #C4C4C4;">
+      <div class="container py-0 py-lg-5">
+        <div class="row align-items-center  py-0 py-lg-5">
           <div class="col-lg-4 col-12">
-            <h1 class="display-3 fontJumbotron">Program Kami</h1>
+            <h1 class="display-3 fontJumbotron text-lg-start text-center">Program Kami</h1>
           </div>
-          <div class="col-lg-8 col-12">
-            <div class="splide2">
+          <div style="
+          margin-left: -20px" class="col-lg-8 col-12">
+            {{-- <div class="splide2">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">
@@ -214,6 +319,38 @@
                   </li>
                 </ul>
               </div>
+            </div> --}}
+            <div class="program-kami">
+              <div class="card border-0" onclick="location.href='newurl.html';">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron">PPDB 2021</span>
+                </div>
+              </div>
+              <div class="card border-0" onclick="location.href='newurl.html';">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron">PPDB 2021</span>
+                </div>
+              </div>
+              <div class="card border-0" onclick="location.href='newurl.html';">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron">PPDB 2021</span>
+                </div>
+              </div>
+              <div class="card border-0" onclick="location.href='newurl.html';">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron">PPDB 2021</span>
+                </div>
+              </div>
+              <div class="card border-0" onclick="location.href='newurl.html';">
+                <img class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <div class="card-footer text-center py-3">
+                  <span class="fontUpJumbotron">PPDB 2021</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -223,8 +360,8 @@
     {{-- Kata Mereka --}}
     <div class="container-fluid pt-3 pb-5 " style="background-color: #CDEEC8;">
       <h1 class="fontJumbotron display-3 text-center my-5 py-5">Kata mereka</h1>
-      <div class="col-12 pb-5 mb-5">
-        <div class="splide3">
+      <div class="kata-mereka container col-12 pb-5 mb-5">
+        {{-- <div class="splide3">
           <div class="splide__track">
             <ul class="splide__list">
               @foreach($data2 as $row)
@@ -250,6 +387,91 @@
               @endforeach
             </ul>
           </div>
+        </div> --}}
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 align-self-center">
+                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-8 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center py-3">
+            <span class="fontNameTesti">ss</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 align-self-center">
+                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-8 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center py-3">
+            <span class="fontNameTesti">ss</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 align-self-center">
+                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-8 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center py-3">
+            <span class="fontNameTesti">ss</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 align-self-center">
+                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-8 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center py-3">
+            <span class="fontNameTesti">ss</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-4 align-self-center">
+                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
+                  <img class="rounded-2 text-center" height="100px" src="{{asset('storage/img/homepage 1.jpg')}}" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-8 align-self-center">
+                <p class="fontJumbotronUp text-center fontUpJumbotron">ss</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center py-3">
+            <span class="fontNameTesti">ss</span>
+          </div>
         </div>
       </div>
     </div>
@@ -257,25 +479,25 @@
     {{-- footer --}}
     <div class="container-fluid py-5" style="background-color: #C4C4C4;">
       <div class="row align-items-center">
-        <div class="col-5 px-3">
+        <div class="col-lg-5 col-12 px-3">
           <div class="row justifiy-content-center align-items-center">
-            <div class="col text-center">
-              <img src="{{asset('storage/img/logo.png')}}" height="80px" alt="" class="rounded-2 avatar">
-              <span class="px-3 fontBrandFooter">Yayasan Bahrul Ulum</span>
+            <div class="col align-items-center text-center">
+              <img src="{{asset('storage/img/logo.png')}}" height="80px" alt="" class="rounded-2 avatar col-lg">
+              <span class="col-lg col-12 px-3 fontBrandFooter">Yayasan Bahrul Ulum</span>
             </div>
           </div>
         </div>
-        <div class="col-2 px-3">
+        <div class="col-lg-2 col-12 px-3 py-lg-1 py-5">
           <div class="row justify-content-center">
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">Home</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">TK</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SD</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
-            <col-12 class="text-start my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Feedback</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">Home</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">TK</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SD</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Feedback</a></col-12>
           </div>
         </div>
-        <div class="col-5 px-3">
+        <div class="col-lg-5 col-12 px-3">
           <div class="row justify-content-center">
             <div class="col-12">
               <div class="row my-2 justify-content-center">
@@ -316,43 +538,123 @@
 
     <!-- jquery -->
     <script src="{{asset('js/jquery.js')}}" ></script>
+    {{-- swiper --}}
+    <script src="{{asset('js/owl.carousel.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <!-- fullPage.js -->
-    <script src="{{asset('js/jquery.pagepiling.js')}}" ></script>
+    {{-- <script src="{{asset('js/jquery.pagepiling.js')}}" ></script> --}}
     {{-- splide --}}
-    <script src="{{asset('js/splide.js')}}" ></script>
+    {{-- <script src="{{asset('js/splide.js')}}" ></script> --}}
     {{-- iconify --}}
     <script src="{{asset('js/iconify.min.js')}}"></script>
 
+    <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+
     <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-          var splide = new Splide( '.splide', {
-            type   : 'loop',
-            gap: 20,
-            perPage: 3,
-            focus: 'center',
-            drag: 'free',
-            autoplay: true
-          } );
-          splide.mount();
-          var splide2 = new Splide( '.splide2', {
-            type   : 'loop',
-            gap: 20,
-            padding: '5rem',
-            perPage: 1,
-            focus: 'center'
-          } );
-          splide2.mount();
-          var splide3 = new Splide( '.splide3', {
-            type   : 'loop',
-            padding: '23rem',
-            gap: 50,
-            perPage: 1,
-            focus: 'center',
-            drag: 'free',
-          } );
-          splide3.mount();
-        } );
+      $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+      });
+
+      // carousel jumbotron
+      $(document).ready(function(){
+        $('.your-class').slick();
+      });
+
+      // carousel berita terkini
+      $('.responsive').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+
+      // Carousel program Kami
+      $('.program-kami').slick({
+        centerMode: true,
+        centerPadding: '100px',
+        slidesToShow: 3,
+        variableWidth: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '50px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+      // Carousel program Kami
+      $('.kata-mereka').slick({
+        centerMode: true,
+        centerPadding: '30px',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+		
     </script>
+
+    
   </body>
 </html>
 
