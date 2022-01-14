@@ -13,7 +13,7 @@ class nonauthController extends Controller
     {
         $data = menu::where('id',$id)->first();
         $nav = "menu";
-        return view('non-auth.tampilMenu',compact('data','nav'));
+        return view('menu',compact('data','nav'));
     }
     public function index()
     {

@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="{{url('')}}">Home</a>
             </li>
             @isset($datalembaga)
               @foreach($datalembaga as $row)
@@ -60,10 +60,7 @@
               @endforeach
             @endisset
             <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="#">About</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
             </li>
             @guest @else @if(Auth::User()->level_id == 1)
             <li class="nav-item mx-3">
