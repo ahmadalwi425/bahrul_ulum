@@ -70,6 +70,7 @@
             <li class="nav-item mx-3">
               <a class="nav-link" aria-current="page" href="{{url('dashboard')}}">Halaman Admin</a>
             </li>
+            
             @endif @endguest
           </ul>
         </div>
@@ -85,16 +86,10 @@
         </div>
     </nav>
 
-    <div class="flash-message">
-      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-        @if(Session::has('alert-' . $msg))
-
-        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-        @endif
-      @endforeach
-    </div> <!-- end .flash-message -->
+    
 
     {{-- FullPage --}}
+    
     <div class="container-fluid" style="background-color: #CDEEC8;">
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
@@ -108,6 +103,7 @@
     </div>
 
     {{-- About --}}
+    
     <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
       <div class="container-lg  py-2 py-lg-5">
         <div class="row">
@@ -326,6 +322,7 @@
       </div>
     </div>
     
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -466,6 +463,13 @@
       });
 		
     </script>
+    <script>
+        @if(session()->has('modal'))
+          $("#emailSentModal").modal("toggle");
+
+        @endif
+    </script>
+
 
     
   </body>

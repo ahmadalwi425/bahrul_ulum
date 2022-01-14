@@ -27,6 +27,10 @@ class pendaftaranController extends Controller
     {
         //
     }
+    public function modal()
+    {
+        return redirect('/registrasi')-> with('alert-success', 'data success');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,6 +40,7 @@ class pendaftaranController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $this->validate($request, [
             'pendaftaran_no_kk' => ['required'],
             'pendaftaran_nisn' => ['required'],
@@ -102,7 +107,7 @@ class pendaftaranController extends Controller
             'pendaftaran_tanggal_masuk'=> Carbon::today()->toDateString(),
             'lembaga_id'=> $request->lembaga_id,
         ]);
-        return view('non-auth.selesaidaftar')-> with('success', 'Anda berhasil mendaftar');
+        return redirect('/registrasi')-> with('alert-success', 'data success');
     }
 
     /**

@@ -82,12 +82,21 @@
     </nav>
 
     {{-- pendaftaran --}}
+    
     <div class="container-fluid mt-5 py-5" style="background-color: #CDEEC8;">
       <div class="container px-2">
         <div class="row">
           <h1 class="display-3 fontJumbotron">Selamat Datang</h1>
           <span class="display-6 fontJumbotron mb-5">di Halaman Pendaftaran</span>
           <p class="fontNavFooter text-danger text-end mb-5">Silahkan lengkapi formulir di bawah ini !</p>
+          <div class="flash-message container-fluid" style="background-color: #CDEEC8;">
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+              @if(Session::has('alert-' . $msg))
+
+              <p class="alert alert-{{ $msg }}">Pendaftaran berhasil</p>
+              @endif
+            @endforeach
+          </div> <!-- end .flash-message -->
           <form method="POST" action="{{ url('pendaftaran/store') }}">
             @csrf
             @if(count($errors) > 0)
@@ -139,11 +148,11 @@
             <div class="row">
               <div class="col-lg mb-3 col-12">
                 <label for="pendaftaran_tempat_lahir" class="form-label fontFormRegister">Tempat Lahir</label>
-                <input name="pendaftaran_tempat_lahir" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                <input name="pendaftaran_tempat_lahir" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
               </div>
               <div class="col-lg mb-3 col-12">
                 <label for="pendaftaran_tanggal_lahir" class="form-label fontFormRegister">Tanggal Lahir</label>
-                <input name="pendaftaran_tanggal_lahir" type="number" class="datepicker form-control font-primer" placeholder="" aria-label="Last name">
+                <input name="pendaftaran_tanggal_lahir" type="date" class="datepicker form-control font-primer" data-date-format="yyyy/mm/dd" placeholder="" aria-label="Last name">
               </div>
             </div>
             <div class="row mb-5">
