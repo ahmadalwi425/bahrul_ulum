@@ -24,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
 Route::get('/modal', [App\Http\Controllers\pendaftaranController::class, 'modal']);
 Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);
+Route::get('/berita/{id}', [App\Http\Controllers\nonauthController::class, 'indexBerita']);
 Route::get('admin/pendaftaran/{id}', [App\Http\Controllers\adminController::class, 'showPendaftaran']);
 Route::get('/siswa/{id}', [App\Http\Controllers\adminController::class, 'showSiswa']);
 Route::get('/siswa/hapus/{id}', [App\Http\Controllers\adminController::class, 'hapusSiswa']);

@@ -134,11 +134,14 @@
                 <ul class="splide__list">
                   @foreach($data as $row)
                   <li class="splide__slide">
+                    
                     <div class="card">
+                      
                       <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
+                        <a href="{{url('berita/'.$row->id)}}" class="fontUpJumbotron text-center">{{$row->berita_judul}}</a>
                       </div>
+                      
                     </div>
                   </li>
                   @endforeach
