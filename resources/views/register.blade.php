@@ -278,6 +278,161 @@
               </div>
             </div>
 
+            {{-- section-5 (data wali general) --}}
+            <div class="col mt-5 mb-3 col-12">
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="data_ortu_nama_wali" class="form-label fontFormRegister">Nama Wali</label>
+                  <input name="data_ortu_nama_wali" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="data_ortu_status_wali" class="form-label fontFormRegister">Status Wali</label>
+                  <input name="data_ortu_status_wali" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="data_ortu_no_hp_wali" class="form-label fontFormRegister">No Hp</label>
+                  <input name="data_ortu_no_hp_wali" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="data_ortu_alamat" class="form-label fontFormRegister">Alamat</label>
+                  <input name="data_ortu_alamat" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="data_ortu_kelurahan" class="form-label fontFormRegister">Kelurahan</label>
+                  <input name="data_ortu_kelurahan" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="data_ortu_provinsi" class="form-label fontFormRegister">Provinsi</label>
+                  <input name="data_ortu_provinsi" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="data_ortu_kota" class="form-label fontFormRegister">Kota</label>
+                  <input name="data_ortu_kota" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="data_ortu_kecamatan" class="form-label fontFormRegister">Kecamatan</label>
+                  <input name="data_ortu_kecamatan" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+            </div>
+
+            {{-- section-6 data ibu --}}
+            <div class="col mt-5 mb-3 col-12">
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_nik" class="form-label fontFormRegister">NIK Ibu</label>
+                  <input name="ibu_personal_ortu_nik"" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_nama" class="form-label fontFormRegister">Nama Ibu</label>
+                  <input name="ibu_personal_ortu_nama" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ibu_personal_ortu_no_hp" class="form-label fontFormRegister">No Hp Ibu</label>
+                  <input name="ibu_personal_ortu_no_hp" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_tempat_lahir" class="form-label fontFormRegister">Tempat Lahir ibu</label>
+                  <input name="ibu_personal_ortu_tempat_lahir" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_tanggal_lahir" class="form-label fontFormRegister">Tanggal Lahir ibu</label>
+                  <input name="ibu_personal_ortu_tanggal_lahir" type="date" class="datepicker form-control font-primer" data-date-format="yyyy/mm/dd" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ibu_personal_ortu_pendidikan_terakhir" class="form-label fontFormRegister">Pendidikan Terakhir</label>
+                  <select name="ibu_personal_ortu_pendidikan_terakhir" class="form-control font-primer" placeholder="" aria-label="Last name">
+                    <option value="SD" class="form-control font-primer">SD</option>
+                    <option value="SMP" class="form-control font-primer">SMP</option>
+                    <option value="SMA/SMK" class="form-control font-primer">SMA/SMK</option>
+                    <option value="D3" class="form-control font-primer">D3</option>
+                    <option value="D4/S1" class="form-control font-primer">D4/S1</option>
+                    <option value="S2" class="form-control font-primer">S2</option>
+                    <option value="S3" class="form-control font-primer">S3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_status" class="form-label fontFormRegister">Status Ibu</label>
+                  <select name="ibu_personal_ortu_status" class="form-control font-primer" placeholder="" aria-label="Last name">
+                    <option value="masih hidup" class="form-control font-primer">Masih Hidup</option>
+                    <option value="sudah meninggal" class="form-control font-primer">Sudah Meninggal</option>
+                  </select>
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ibu_personal_ortu_pekerjaan" class="form-label fontFormRegister">Pekerjaan Ibu</label>
+                  <input name="ibu_personal_ortu_pekerjaan" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ibu_personal_ortu_penghasilan" class="form-label fontFormRegister">Penghasilan Ibu (rata-rata)</label>
+                  <input name="ibu_personal_ortu_penghasilan" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+            </div>
+
+            {{-- section-7 data ayah --}}
+            <div class="col mt-5 mb-3 col-12">
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_nik" class="form-label fontFormRegister">NIK ayah</label>
+                  <input name="ayah_personal_ortu_nik"" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_nama" class="form-label fontFormRegister">Nama ayah</label>
+                  <input name="ayah_personal_ortu_nama" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ayah_personal_ortu_no_hp" class="form-label fontFormRegister">No Hp ayah</label>
+                  <input name="ayah_personal_ortu_no_hp" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_tempat_lahir" class="form-label fontFormRegister">Tempat Lahir ayah</label>
+                  <input name="ayah_personal_ortu_tempat_lahir" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_tanggal_lahir" class="form-label fontFormRegister">Tanggal Lahir ayah</label>
+                  <input name="ayah_personal_ortu_tanggal_lahir" type="date" class="datepicker form-control font-primer" data-date-format="yyyy/mm/dd" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ayah_personal_ortu_pendidikan_terakhir" class="form-label fontFormRegister">Pendidikan Terakhir</label>
+                  <select name="ayah_personal_ortu_pendidikan_terakhir" class="form-control font-primer" placeholder="" aria-label="Last name">
+                    <option value="SD" class="form-control font-primer">SD</option>
+                    <option value="SMP" class="form-control font-primer">SMP</option>
+                    <option value="SMA/SMK" class="form-control font-primer">SMA/SMK</option>
+                    <option value="D3" class="form-control font-primer">D3</option>
+                    <option value="D4/S1" class="form-control font-primer">D4/S1</option>
+                    <option value="S2" class="form-control font-primer">S2</option>
+                    <option value="S3" class="form-control font-primer">S3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_status" class="form-label fontFormRegister">Status ayah</label>
+                  <select name="ayah_personal_ortu_status" class="form-control font-primer" placeholder="" aria-label="Last name">
+                    <option value="masih hidup" class="form-control font-primer">Masih Hidup</option>
+                    <option value="sudah meninggal" class="form-control font-primer">Sudah Meninggal</option>
+                  </select>
+                </div>
+                <div class="col-lg-3 col-12 mb-3">
+                  <label for="ayah_personal_ortu_pekerjaan" class="form-label fontFormRegister">Pekerjaan ayah</label>
+                  <input name="ayah_personal_ortu_pekerjaan" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                  <label for="ayah_personal_ortu_penghasilan" class="form-label fontFormRegister">Penghasilan ayah (rata-rata)</label>
+                  <input name="ayah_personal_ortu_penghasilan" type="number" class="form-control font-primer" placeholder="" aria-label="Last name">
+                </div>
+              </div>
+            </div>
             <div class="col mt-5 col-12 text-end">
               <button class="btn btn-primer font-primer-b px-3 py-2">Daftar</button>
             </div>

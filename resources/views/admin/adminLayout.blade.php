@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset('css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}" type="text/css">
+  <link href="{{asset('argon-icon/css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{asset('argon-icon/css/nucleo-svg.css')}}" rel="stylesheet" />
   {{-- <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css"> --}}
   <!-- Page plugins -->
   <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">

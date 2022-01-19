@@ -170,10 +170,6 @@ class adminController extends Controller
             'siswa_media_sosial'=> $data->pendaftaran_media_sosial,
             'lembaga_id'=> $data->lembaga_id,
         ]);
-        $datasiswa = siswa::orderBy('id','desc')->first();
-        $data_ortu = data_ortu::create([
-            'siswa_id'=>$datasiswa->id,
-        ]);
         return redirect('admin/pendaftaran');
     }
     public function daftarTolak($id)
