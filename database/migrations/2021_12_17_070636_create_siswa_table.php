@@ -45,6 +45,35 @@ class CreateSiswaTable extends Migration
             $table->string('siswa_cita_cita', 20);
             $table->string('siswa_hobi', 20);
             $table->string('siswa_media_sosial', 25);
+            
+            $table->string('data_ortu_nama_wali', 50)->nullable();
+            $table->string('data_ortu_status_wali', 50)->nullable();
+            $table->string('data_ortu_no_hp_wali', 50);
+            $table->string('data_ortu_alamat', 100);
+            $table->string('data_ortu_kelurahan', 50);
+            $table->string('data_ortu_provinsi', 50);
+            $table->string('data_ortu_kota', 50);
+            $table->string('data_ortu_kecamatan', 50);
+
+            $table->string('ibu_personal_ortu_nik', 20);
+            $table->string('ibu_personal_ortu_nama', 50);
+            $table->string('ibu_personal_ortu_status', 20);
+            $table->string('ibu_personal_ortu_tempat_lahir', 50);
+            $table->date('ibu_personal_ortu_tanggal_lahir');
+            $table->string('ibu_personal_ortu_pendidikan_terakhir', 20);
+            $table->string('ibu_personal_ortu_pekerjaan', 40);
+            $table->string('ibu_personal_ortu_no_hp', 20);
+            $table->string('ibu_personal_ortu_penghasilan', 10);
+
+            $table->string('ayah_personal_ortu_nik', 20);
+            $table->string('ayah_personal_ortu_nama', 50);
+            $table->string('ayah_personal_ortu_status', 20);
+            $table->string('ayah_personal_ortu_tempat_lahir', 50);
+            $table->date('ayah_personal_ortu_tanggal_lahir');
+            $table->string('ayah_personal_ortu_pendidikan_terakhir', 20);
+            $table->string('ayah_personal_ortu_pekerjaan', 40);
+            $table->string('ayah_personal_ortu_no_hp', 20);
+            $table->string('ayah_personal_ortu_penghasilan', 10);
         });
     }
 

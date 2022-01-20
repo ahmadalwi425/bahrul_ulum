@@ -34,6 +34,8 @@ Route::get('/admin/pendaftaran/ditolak/{id}', [App\Http\Controllers\adminControl
 Route::get('/admin/lembaga/menu/{id}', [App\Http\Controllers\menuController::class, 'index']);
 Route::get('/admin/lembaga/destroy/{id}', [App\Http\Controllers\lembagaController::class, 'destroy']);
 Route::get('/admin/lembaga', [App\Http\Controllers\lembagaController::class, 'index']);
+Route::get('/admin/lembaga/edit/{id}', [App\Http\Controllers\lembagaController::class, 'edit']);
+Route::put('/admin/lembaga/update/{id}', [App\Http\Controllers\lembagaController::class, 'update']);
 Route::get('/admin/lembaga/create', [App\Http\Controllers\lembagaController::class, 'create']);
 Route::post('/admin/lembaga/store', [App\Http\Controllers\lembagaController::class, 'store']);
 Route::get('/admin/pendaftaran', [App\Http\Controllers\adminController::class, 'pendaftaran']);

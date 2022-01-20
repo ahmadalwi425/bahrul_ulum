@@ -109,7 +109,11 @@ class kata_merekaController extends Controller
         ]);
         $data = kata_mereka::where('id',$id)->first();
         if ($request->file('foto')) {
-            $image_name = $request->file('foto')->store('img-kata_mereka', 'public');
+            $current = Carbon::now()->format('YmdHs');
+            $file = $request->file('foto') ;
+            $image_name = $current.$file->getClientOriginalName() ;
+            $destinationPath = public_path().'/img' ;
+            $file->move($destinationPath,$image_name);
             $data->kata_mereka_cover = $image_name;
         }
         $data->nama= $request->nama;

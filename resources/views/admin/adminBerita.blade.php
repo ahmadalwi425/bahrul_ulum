@@ -67,7 +67,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$row->berita_judul}}</td>
                         <td>
-                            <img src="{{asset('storage/'.$row->berita_cover)}}" alt="" style="width:200px;height:100px;">
+                            <img src="{{asset('img/'.$row->berita_cover)}}" alt="" style="width:200px;height:100px;">
                         </td>
                         <td>
                         <a href="{{ url('admin/berita/edit',$row->id) }}" class="badge badge-dot mr-4">

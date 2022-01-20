@@ -8,6 +8,7 @@ use App\Models\siswa;
 use App\Models\menu;
 use App\Models\lembaga;
 use App\Models\data_ortu;
+use App\Models\personal_ortu;
 use App\Imports\siswaImport;
 use App\Exports\siswaExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -134,7 +135,10 @@ class adminController extends Controller
 
     public function daftarTerima($id)
     {
-        $data = pendaftaran::where('id',$id)->first();
+        $data = pendaftaran::where('id',$id)->with('lembaga')->first();
+        $dataortu = data_ortu::where('siswa_nisn',$data->pendaftaran_nisn)->first();
+        $dataibu = personal_ortu::where('id',$dataortu->ibu_id)->first();
+        $dataayah = personal_ortu::where('id',$dataortu->ayah_id)->first();
         $data->pendaftaran_status = "diterima";
         $data->save();
         $siswa = siswa::create([
@@ -169,6 +173,35 @@ class adminController extends Controller
             'siswa_hobi'=> $data->pendaftaran_hobi,
             'siswa_media_sosial'=> $data->pendaftaran_media_sosial,
             'lembaga_id'=> $data->lembaga_id,
+
+            'data_ortu_nama_wali'=> $dataortu->data_ortu_nama_wali,
+            'data_ortu_status_wali'=> $dataortu->data_ortu_status_wali,
+            'data_ortu_no_hp_wali'=> $dataortu->data_ortu_no_hp_wali,
+            'data_ortu_alamat'=> $dataortu->data_ortu_alamat,
+            'data_ortu_kelurahan'=> $dataortu->data_ortu_kelurahan,
+            'data_ortu_provinsi'=> $dataortu->data_ortu_provinsi,
+            'data_ortu_kota'=> $dataortu->data_ortu_kota,
+            'data_ortu_kecamatan'=> $dataortu->data_ortu_kecamatan,
+
+            'ibu_personal_ortu_nik' => $dataibu->personal_ortu_nik,
+            'ibu_personal_ortu_nama' => $dataibu->personal_ortu_nama,
+            'ibu_personal_ortu_status' => $dataibu->personal_ortu_status,
+            'ibu_personal_ortu_tempat_lahir' => $dataibu->personal_ortu_tempat_lahir,
+            'ibu_personal_ortu_tanggal_lahir' => $dataibu->personal_ortu_tanggal_lahir,
+            'ibu_personal_ortu_pendidikan_terakhir' => $dataibu->personal_ortu_pendidikan_terakhir,
+            'ibu_personal_ortu_pekerjaan' => $dataibu->personal_ortu_pekerjaan,
+            'ibu_personal_ortu_no_hp' => $dataibu->personal_ortu_no_hp,
+            'ibu_personal_ortu_penghasilan' => $dataibu->personal_ortu_penghasilan,
+
+            'ayah_personal_ortu_nik' => $dataayah->personal_ortu_nik,
+            'ayah_personal_ortu_nama' => $dataayah->personal_ortu_nama,
+            'ayah_personal_ortu_status' => $dataayah->personal_ortu_status,
+            'ayah_personal_ortu_tempat_lahir' => $dataayah->personal_ortu_tempat_lahir,
+            'ayah_personal_ortu_tanggal_lahir' => $dataayah->personal_ortu_tanggal_lahir,
+            'ayah_personal_ortu_pendidikan_terakhir' => $dataayah->personal_ortu_pendidikan_terakhir,
+            'ayah_personal_ortu_pekerjaan' => $dataayah->personal_ortu_pekerjaan,
+            'ayah_personal_ortu_no_hp' => $dataayah->personal_ortu_no_hp,
+            'ayah_personal_ortu_penghasilan' => $dataayah->personal_ortu_penghasilan,
         ]);
         return redirect('admin/pendaftaran');
     }
