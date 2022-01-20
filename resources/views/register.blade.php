@@ -236,7 +236,7 @@
                 <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_media_sosial" class="form-label fontFormRegister">Media Sosial</label>
                   <input name="pendaftaran_media_sosial" type="text" class="form-control font-primer" placeholder="" aria-label="Last name">
-                  <input name="lembaga_id" type="number" class="d-none form-control font-primer" placeholder="" aria-label="Last name" value=1>
+                  <input name="lembaga_id" type="number" class="d-none form-control font-primer" placeholder="" aria-label="Last name" value=2>
                 </div>
                 <div class="col-lg-3 col-12 mb-3">
                   <label for="pendaftaran_kewarganegaraan" class="form-label fontFormRegister">Kewarganegaraan</label>

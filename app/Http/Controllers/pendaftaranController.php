@@ -143,6 +143,7 @@ class pendaftaranController extends Controller
             'data_ortu_kelurahan'=> $request->data_ortu_kelurahan,
             'data_ortu_provinsi'=> $request->data_ortu_provinsi,
             'data_ortu_kota'=> $request->data_ortu_kota,
+            'data_ortu_kecamatan'=> $request->data_ortu_kecamatan,
             'siswa_nisn' => $request->pendaftaran_nisn,
         ]);
         $personal_ortu = personal_ortu::create([
