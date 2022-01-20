@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\nonauthController::class, 'index']);
+Route::get('/berita', function() {
+    return view('berita');
+});
 Route::get('/registrasi', [App\Http\Controllers\nonauthController::class, 'registrasi']);
 Route::get('/feedback', [App\Http\Controllers\nonauthController::class, 'feedback']);
 Route::post('/feedback/store', [App\Http\Controllers\nonauthController::class, 'feedbackStore']);

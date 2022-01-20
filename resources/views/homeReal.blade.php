@@ -129,70 +129,14 @@
             Berita Terkini
           </h1>
           <div class="col-12">
-            {{-- <div class="splide">
-              <div class="splide__track">
-                <ul class="splide__list">
-                  @foreach($data as $row)
-                  <li class="splide__slide">
-                    <div class="card">
-                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
-                      </div>
-                    </div>
-                  </li>
-                  @endforeach
-                </ul>
-              </div>
-            </div> --}}
-            {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card">
-                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
-                      <div class="card-footer text-center py-3">
-                        <span class="fontUpJumbotron text-center">PPDB</span>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div> --}}
             <div class="responsive">
               @foreach($data as $row)
-              <div class="card">
+              <div class="card" onclick="location.href='{{url('berita', $row->id)}}';" style="cursor: pointer;">
                 <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                 </div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloribus velit maiores quisquam placeat dicta, accusantium tempore nemo illo quam?
               </div>
               @endforeach
             </div>

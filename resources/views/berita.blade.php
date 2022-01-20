@@ -81,13 +81,14 @@
         </div>
     </nav>
 
-    {{-- Menu --}}
+    {{-- Berita --}}
     <div class="container-fluid mt-5 py-5" style="background-color: #CDEEC8; min-height:500px;">
       <div class="container px-2">
         <div class="row">
-            <h1 class="display-3 fontJumbotron text-center">{{ $data->menu_judul }}</h1>
+            <img src="{{$data->berita_cover}}" class="img-fluid" alt="...">
+            <h1 class="display-3 fontJumbotron text-center">{{ $data->berita_judul }}</h1>
             <div class="col-12 fontNavbar">
-                {!!$data->menu_konten!!}
+                {!!$data->berita_konten!!}
             </div>
         </div>
       </div>
