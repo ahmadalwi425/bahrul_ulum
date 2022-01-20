@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\pendaftaran;
+use App\Models\data_ortu;
+use App\Models\personal_ortu;
 use Carbon\Carbon;
 
 class pendaftaranController extends Controller
@@ -72,6 +74,31 @@ class pendaftaranController extends Controller
             'pendaftaran_cita_cita' => ['required'],
             'pendaftaran_hobi' => ['required'],
             'pendaftaran_media_sosial' => ['required'],
+            'data_ortu_nama_wali' => ['required'],
+            'data_ortu_status_wali' => ['required'],
+            'data_ortu_no_hp_wali' => ['required'],
+            'data_ortu_alamat' => ['required'],
+            'data_ortu_kelurahan' => ['required'],
+            'data_ortu_provinsi' => ['required'],
+            'data_ortu_kota' => ['required'],
+            'ibu_personal_ortu_nik' => ['required'],
+            'ibu_personal_ortu_nama' => ['required'],
+            'ibu_personal_ortu_status' => ['required'],
+            'ibu_personal_ortu_tempat_lahir' => ['required'],
+            'ibu_personal_ortu_tanggal_lahir' => ['required'],
+            'ibu_personal_ortu_pendidikan_terakhir' => ['required'],
+            'ibu_personal_ortu_pekerjaan' => ['required'],
+            'ibu_personal_ortu_no_hp' => ['required'],
+            'ibu_personal_ortu_penghasilan' => ['required'],
+            'ayah_personal_ortu_nik' => ['required'],
+            'ayah_personal_ortu_nama' => ['required'],
+            'ayah_personal_ortu_status' => ['required'],
+            'ayah_personal_ortu_tempat_lahir' => ['required'],
+            'ayah_personal_ortu_tanggal_lahir' => ['required'],
+            'ayah_personal_ortu_pendidikan_terakhir' => ['required'],
+            'ayah_personal_ortu_pekerjaan' => ['required'],
+            'ayah_personal_ortu_no_hp' => ['required'],
+            'ayah_personal_ortu_penghasilan' => ['required'],
         ]);
         $pendaftaran = pendaftaran::create([
             'pendaftaran_no_kk'=> $request->pendaftaran_no_kk,
@@ -107,6 +134,46 @@ class pendaftaranController extends Controller
             'pendaftaran_tanggal_masuk'=> Carbon::today()->toDateString(),
             'lembaga_id'=> $request->lembaga_id,
         ]);
+
+        $data_ortu = data_ortu::create([
+            'data_ortu_nama_wali'=> $request->data_ortu_nama_wali,
+            'data_ortu_status_wali'=> $request->data_ortu_status_wali,
+            'data_ortu_no_hp_wali'=> $request->data_ortu_no_hp_wali,
+            'data_ortu_alamat'=> $request->data_ortu_alamat,
+            'data_ortu_kelurahan'=> $request->data_ortu_kelurahan,
+            'data_ortu_provinsi'=> $request->data_ortu_provinsi,
+            'data_ortu_kota'=> $request->data_ortu_kota,
+            'data_ortu_kecamatan'=> $request->data_ortu_kecamatan,
+            'siswa_nisn' => $request->pendaftaran_nisn,
+        ]);
+        $personal_ortu = personal_ortu::create([
+            'personal_ortu_nik' => $request->ibu_personal_ortu_nik,
+            'personal_ortu_nama' => $request->ibu_personal_ortu_nama,
+            'personal_ortu_status' => $request->ibu_personal_ortu_status,
+            'personal_ortu_tempat_lahir' => $request->ibu_personal_ortu_tempat_lahir,
+            'personal_ortu_tanggal_lahir' => $request->ibu_personal_ortu_tanggal_lahir,
+            'personal_ortu_pendidikan_terakhir' => $request->ibu_personal_ortu_pendidikan_terakhir,
+            'personal_ortu_pekerjaan' => $request->ibu_personal_ortu_pekerjaan,
+            'personal_ortu_no_hp' => $request->ibu_personal_ortu_no_hp,
+            'personal_ortu_penghasilan' => $request->ibu_personal_ortu_penghasilan,
+        ]);
+        $personal_ortu = personal_ortu::create([
+            'personal_ortu_nik' => $request->ayah_personal_ortu_nik,
+            'personal_ortu_nama' => $request->ayah_personal_ortu_nama,
+            'personal_ortu_status' => $request->ayah_personal_ortu_status,
+            'personal_ortu_tempat_lahir' => $request->ayah_personal_ortu_tempat_lahir,
+            'personal_ortu_tanggal_lahir' => $request->ayah_personal_ortu_tanggal_lahir,
+            'personal_ortu_pendidikan_terakhir' => $request->ayah_personal_ortu_pendidikan_terakhir,
+            'personal_ortu_pekerjaan' => $request->ayah_personal_ortu_pekerjaan,
+            'personal_ortu_no_hp' => $request->ayah_personal_ortu_no_hp,
+            'personal_ortu_penghasilan' => $request->ayah_personal_ortu_penghasilan,
+        ]);
+        $dataupdate = data_ortu::where('siswa_nisn',$request->pendaftaran_nisn)->first();
+        $dataibu = personal_ortu::where('personal_ortu_nik',$request->ibu_personal_ortu_nik)->first();
+        $dataayah = personal_ortu::where('personal_ortu_nik',$request->ayah_personal_ortu_nik)->first();
+        $dataupdate->ibu_id = $dataibu->id;
+        $dataupdate->ayah_id = $dataayah->id;
+        $dataupdate->save();
         return redirect('/registrasi')-> with('alert-success', 'data success');
     }
 

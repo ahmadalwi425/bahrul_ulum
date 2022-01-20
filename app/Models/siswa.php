@@ -17,6 +17,6 @@ class siswa extends Model
         return $this->belongsTo(lembaga::class, 'lembaga_id');
     }
     public function data_ortu(){
-        return $this->hasMany(data_ortu::class, 'id');
+        return $this->hasMany(data_ortu::class, 'nisn');
     }
 }

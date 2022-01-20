@@ -10,12 +10,13 @@ class siswaExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        return siswa::all();
+        return siswa::get();
     }
     public function headings(): array
     {
         return [
             'id',
+            'lembaga_id',
             'siswa_no_kk',
             'siswa_nisn',
             'siswa_no_kip',
@@ -46,7 +47,32 @@ class siswaExport implements FromCollection, WithHeadings
             'siswa_cita_cita',
             'siswa_hobi',
             'siswa_media_sosial',
-            'lembaga_id',
+            'data_ortu_nama_wali',
+            'data_ortu_status_wali',
+            'data_ortu_no_hp_wali',
+            'data_ortu_alamat',
+            'data_ortu_kelurahan',
+            'data_ortu_provinsi',
+            'data_ortu_kota',
+            'data_ortu_kecamatan',
+            'ibu_personal_ortu_nik',
+            'ibu_personal_ortu_nama',
+            'ibu_personal_ortu_status',
+            'ibu_personal_ortu_tempat_lahir',
+            'ibu_personal_ortu_tanggal_lahir',
+            'ibu_personal_ortu_pendidikan_terakhir',
+            'ibu_personal_ortu_pekerjaan',
+            'ibu_personal_ortu_no_hp',
+            'ibu_personal_ortu_penghasilan',
+            'ayah_personal_ortu_nik',
+            'ayah_personal_ortu_nama',
+            'ayah_personal_ortu_status',
+            'ayah_personal_ortu_tempat_lahir',
+            'ayah_personal_ortu_tanggal_lahir',
+            'ayah_personal_ortu_pendidikan_terakhir',
+            'ayah_personal_ortu_pekerjaan',
+            'ayah_personal_ortu_no_hp',
+            'ayah_personal_ortu_penghasilan',
         ];
     }
 }

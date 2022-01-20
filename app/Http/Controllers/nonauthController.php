@@ -6,12 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\menu;
 use App\Models\berita;
 use App\Models\kata_mereka;
+use Carbon\Carbon;
 
 class nonauthController extends Controller
 {
     public function indexMenu($id)
     {
         $data = menu::where('id',$id)->first();
+        $nav = "menu";
+        return view('menu',compact('data','nav'));
+    }
+    public function indexBerita($id)
+    {
+        $data = berita::where('id',$id)->first();
         $nav = "menu";
         return view('menu',compact('data','nav'));
     }
@@ -37,13 +44,16 @@ class nonauthController extends Controller
             'kata' => 'required',
             'foto' => 'required|mimes:jpeg,bmp,png',
         ]);
-
-        $image_name = $request->file('foto')->store('img-berita', 'public');
+        $current = Carbon::now()->format('YmdHs');
+        $file = $request->file('foto') ;
+        $fileName = $current.$file->getClientOriginalName() ;
+        $destinationPath = public_path().'/img' ;
+        $file->move($destinationPath,$fileName);
         
         $berita = kata_mereka::create([
             'nama'=> $request->nama,
             'kata'=> $request->kata,
-            'foto'=> $image_name,
+            'foto'=> $fileName,
         ]);
         return redirect('/')->with('alert-success', 'User was successful added!');
     }

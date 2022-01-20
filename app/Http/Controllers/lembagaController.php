@@ -45,8 +45,6 @@ class lembagaController extends Controller
         $validated = $request->validate([
             'lembaga_nama' => 'required',
         ]);
-
-        $image_name = $request->file('gambar')->store('img-berita', 'public');
         
         $lembaga = lembaga::create([
             'lembaga_nama'=> $request->lembaga_nama,
@@ -73,7 +71,9 @@ class lembagaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = lembaga::find($id);
+        $nav = "lembaga";
+        return view('admin.adminLembagaEdit',compact('data','nav'));
     }
 
     /**

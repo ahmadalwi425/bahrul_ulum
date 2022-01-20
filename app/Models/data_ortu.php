@@ -20,6 +20,6 @@ class data_ortu extends Model
         return $this->belongsTo(personal_ortu::class, 'ayah_id');
     }
     public function siswa(){
-        return $this->belongsTo(siswa::class, 'siswa_id');
+        return $this->belongsTo(siswa::class, 'siswa_nisn');
     }
 }

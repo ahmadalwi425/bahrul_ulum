@@ -201,7 +201,7 @@
             <div class="row">
               <div class="col-lg-5 col-12 align-self-center text-center">
                 <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
+                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('img/'.$row->foto)}}" alt="Card image cap">
                 </div>
               </div>
               <div class="col-lg-7 col-12 align-self-center">

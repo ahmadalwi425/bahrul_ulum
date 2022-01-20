@@ -48,7 +48,11 @@ class beritaController extends Controller
             'gambar' => 'required|mimes:jpeg,bmp,png',
         ]);
 
-        $image_name = $request->file('gambar')->store('img-berita', 'public');
+        $current = Carbon::now()->format('YmdHs');
+        $file = $request->file('gambar') ;
+        $image_name = $current.$file->getClientOriginalName() ;
+        $destinationPath = public_path().'/img' ;
+        $file->move($destinationPath,$image_name);
         
         $berita = berita::create([
             'berita_judul'=> $request->berita_judul,
@@ -98,7 +102,11 @@ class beritaController extends Controller
         ]);
         $data = berita::where('id',$id)->first();
         if ($request->file('gambar')) {
-            $image_name = $request->file('gambar')->store('img-berita', 'public');
+            $current = Carbon::now()->format('YmdHs');
+            $file = $request->file('gambar') ;
+            $image_name = $current.$file->getClientOriginalName() ;
+            $destinationPath = public_path().'/img' ;
+            $file->move($destinationPath,$image_name);
             $data->berita_cover = $image_name;
         }
         $data->berita_judul= $request->berita_judul;
