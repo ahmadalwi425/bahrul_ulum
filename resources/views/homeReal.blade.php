@@ -137,7 +137,7 @@
                     
                     <div class="card">
                       
-                      <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
+                      <img loading="lazy" class="card-img-top" style="" src="{{asset('img/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/img/homepage.jpg')}}">
                       <div class="card-footer text-center py-3">
                         <a href="{{url('berita/'.$row->id)}}" class="fontUpJumbotron text-center">{{$row->berita_judul}}</a>
                       </div>
@@ -192,7 +192,7 @@
             <div class="responsive">
               @foreach($data as $row)
               <div class="card">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('img/'.$row->berita_cover)}}" class="d-block mx-auto h-1" alt="{{asset('storage/'.$row->berita_cover)}}">
                 <div class="card-footer text-center py-3">
                   <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
                 </div>
@@ -260,7 +260,7 @@
             <div class="row">
               <div class="col-lg-5 col-12 align-self-center text-center">
                 <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('storage/'.$row->foto)}}" alt="Card image cap">
+                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('img/'.$row->foto)}}" alt="Card image cap">
                 </div>
               </div>
               <div class="col-lg-7 col-12 align-self-center">

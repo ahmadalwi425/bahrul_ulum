@@ -86,7 +86,7 @@
       <div class="container px-2">
         <div class="row">
             <h1 class="display-3 fontJumbotron text-center">{{ $data->berita_judul }}</h1>
-            <img src="{{asset('storage/'.$row->berita_cover)}}" alt="" style="width:80%;">
+            <img src="{{asset('img/'.$row->berita_cover)}}" alt="" style="width:80%;">
             <div class="col-12 fontNavbar">
                 {!!$data->berita_konten!!}
             </div>
