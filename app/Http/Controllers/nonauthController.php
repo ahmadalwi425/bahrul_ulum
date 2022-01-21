@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\menu;
 use App\Models\berita;
+use App\Models\lembaga;
 use App\Models\kata_mereka;
 use Carbon\Carbon;
 
@@ -28,9 +29,10 @@ class nonauthController extends Controller
         $data2 = kata_mereka::where('status','verified')->get();
         return view('homeReal',compact('data','data2'));
     }
-    public function registrasi()
+    public function registrasi($id)
     {
-        return view('register');
+        $data = lembaga::find($id);
+        return view('register',compact('data'));
     }
 
     public function feedback()

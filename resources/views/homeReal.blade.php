@@ -68,7 +68,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @isset($datalembaga)
                 @foreach($datalembaga as $row)
-                <li><a class="dropdown-item" href="{{url('register', $row->lembaga_nama)}}">{{$row->lembaga_nama}}</a></li>
+                <li><a class="dropdown-item" href="{{url('registrasi/'. $row->id)}}">Pendaftaran {{$row->lembaga_nama}}</a></li>
                 @endforeach
                 @endisset
               </ul>

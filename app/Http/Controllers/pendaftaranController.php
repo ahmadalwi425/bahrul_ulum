@@ -182,7 +182,7 @@ class pendaftaranController extends Controller
         $dataupdate->ibu_id = $dataibu->id;
         $dataupdate->ayah_id = $dataayah->id;
         $dataupdate->save();
-        return redirect('/pendaftaran/tk')-> with('alert-success', 'data success');
+        return redirect('registrasi/'.$request->lembaga_id)-> with('alert-success', 'data success');
     }
 
     /**
