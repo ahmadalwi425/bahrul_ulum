@@ -15,9 +15,17 @@ class pendaftaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indextk()
     {
-        return view('register');
+        return view('registertk');
+    }
+    public function indexmts()
+    {
+        return view('registermts');
+    }
+    public function indexms()
+    {
+        return view('registerms');
     }
 
     /**
@@ -174,7 +182,7 @@ class pendaftaranController extends Controller
         $dataupdate->ibu_id = $dataibu->id;
         $dataupdate->ayah_id = $dataayah->id;
         $dataupdate->save();
-        return redirect('/registrasi')-> with('alert-success', 'data success');
+        return redirect('/pendaftaran/tk')-> with('alert-success', 'data success');
     }
 
     /**

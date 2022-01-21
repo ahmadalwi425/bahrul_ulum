@@ -63,8 +63,15 @@
                 </li>
               @endforeach
             @endisset
-            <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="{{url('/registrasi')}}">Pendaftaran</a>
+            <li class="nav-item dropdown mx-3">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pendaftaran</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @isset($datalembaga)
+                @foreach($datalembaga as $row)
+                <li><a class="dropdown-item" href="{{url('register', $row->lembaga_nama)}}">{{$row->lembaga_nama}}</a></li>
+                @endforeach
+                @endisset
+              </ul>
             </li>
             @guest @else @if(Auth::User()->level_id == 1)
             <li class="nav-item mx-3">

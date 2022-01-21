@@ -24,7 +24,9 @@ Route::post('/feedback/store', [App\Http\Controllers\nonauthController::class, '
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\adminController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pendaftaran', [App\Http\Controllers\pendaftaranController::class, 'index']);
+Route::get('/pendaftaran/tk', [App\Http\Controllers\pendaftaranController::class, 'indextk']);
+Route::get('/pendaftaran/mts', [App\Http\Controllers\pendaftaranController::class, 'indexmts']);
+Route::get('/pendaftaran/ma', [App\Http\Controllers\pendaftaranController::class, 'indexma']);
 Route::get('/modal', [App\Http\Controllers\pendaftaranController::class, 'modal']);
 Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);
 Route::get('/berita/{id}', [App\Http\Controllers\nonauthController::class, 'indexBerita']);
