@@ -48,7 +48,7 @@
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="{{url('')}}">Beranda</a>
             </li>
             @isset($datalembaga)
               @foreach($datalembaga as $row)
