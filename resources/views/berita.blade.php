@@ -84,8 +84,16 @@
     <div class="container-fluid mt-5 py-5" style="background-color: #CDEEC8; min-height:500px;">
       <div class="container px-2">
         <div class="row">
-            <img src="{{$data->berita_cover}}" class="img-fluid" alt="...">
+            <div height="300" style="object-fit: cover" class="text-center mb-4">
+                <img height="300" style="object-fit: cover" src="{{asset('img/'.$data->berita_cover)}}" class="" alt="...">
+            </div>
             <h1 class="display-3 fontJumbotron text-center">{{ $data->berita_judul }}</h1>
+            <!--{!! $data !!}-->
+            {!! html_entity_decode($data->berita_konten)!!}
+            </div>
+            </div>
+            </div>
+            <div class="container-fluid mt-1 py-4" style="background-color: white;">
             <div class="col-12 fontNavbar">
       <div class="row align-items-center">
         <div class="col-5 px-3">

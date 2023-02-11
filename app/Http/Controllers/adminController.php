@@ -268,6 +268,20 @@ class adminController extends Controller
         $data->save();
         return redirect('/admin/siswa');
     }
+
+    // banner
+    public function banner()
+    {
+        $nav = "banner";
+        return view('admin.adminBanner',compact('nav'));
+    }
+    
+    // program kami
+    public function program()
+    {
+        $nav = "program";
+        return view('admin.adminProgram',compact('nav'));
+    }
     
 
 }

@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset('css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.css')}}" type="text/css">
+  <link href="{{asset('argon-icon/css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{asset('argon-icon/css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset('css/argon.css')}}" type="text/css">
 </head>
@@ -52,40 +54,7 @@
           </li> --}}
         </ul>
         <hr class="d-lg-none" />
-        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Like us on Facebook">
-              <i class="fab fa-facebook-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Facebook</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Instagram">
-              <i class="fab fa-instagram"></i>
-              <span class="nav-link-inner--text d-lg-none">Instagram</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Twitter">
-              <i class="fab fa-twitter-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Twitter</span>
-            </a>
-          </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Star us on Github">
-              <i class="fab fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li> --}}
-          {{-- <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a href="{{ url('registerUser') }}" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fas fa-shopping-cart mr-2"></i>
-              </span>
-              <span class="nav-link-inner--text">Ke Halaman Registrasi</span>
-            </a>
-          </li> --}}
-        </ul>
+        
       </div>
     </div>
   </nav>
@@ -197,16 +166,7 @@
         <div class="col-xl-6">
           <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank">SantriNgoding</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
+              <a href="" class="nav-link" target="_blank">SantriNgoding</a>
             </li>
           </ul>
         </div>
@@ -214,10 +174,13 @@
     </div>
   </footer>
   <!-- Argon Scripts -->
+  <script src="{{asset('js/argon.js?v=1.2.0')}}"></script>
   <!-- Core -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('js/js.cookie.js')}}"></script>
+    <script src="{{asset('js/jquery-3.6.0.min.js')}}" crossorigin="anonymous"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/js.cookie.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
+    <script src="{{asset('js/jquery-scrollLock.min.js')}}"></script>
   {{-- <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script> --}}
   <!-- Argon JS -->

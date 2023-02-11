@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             @isset($datalembaga)
               @foreach($datalembaga as $row)
@@ -91,10 +91,10 @@
           </ul>
         </div>
         @guest
-          <a  href="{{ route('login') }}" class="btn btn-primer">Login</a>
+          <a  href="{{ route('login') }}" class="btn btn-primer">Log In</a>
         @else
           <a  href="{{ route('logout') }}"  onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();"class="btn btn-primer">Logout</a>
+          document.getElementById('logout-form').submit();"class="btn btn-primer">Log Out</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -105,134 +105,36 @@
     
 
     {{-- FullPage --}}
-    
-    <div class="container-fluid" style="background-color: #CDEEC8;">
-      <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
-          <div class="col-12">
-              <div class="your-class">
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 1.jpg')}}"></div>
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
-              </div>
-          </div>
-      </div>
-    </div>
-
-    {{-- About --}}
-    
-    <div class="container-fluid" style="background-color: #CDEEC8; padding-top: 100px; padding-bottom: 100px;">
-      <div class="container-lg  py-2 py-lg-5">
-        <div class="row">
-        <div class="col-12 text-center text-lg-start">
-          <p class="display-6 fontUpJumbotron p-0 m-0">Selamat Datang di</p>
-          <h1 class="display-3 p-0 m-0 fontJumbotron">Pondok Pesantren</h1>
-          <h1 class="display-3 p-0 m-0 fontJumbotron">YPPAI Bahrul Ulum</h1>
-          <h1 class="display-3 p-0 m-0 fontJumbotron">Tajinan</h1>
-        </div>
-        <div class="col-lg-5"></div>
-        <div class="col-lg-7 col-12 pt-5 align-self-end">
-          <p class="fontNavbar text-center text-lg-end">
-            Pondok Pesantren Bahrul Ulum Tajinan merupakan wujud dari khidmat dan dedikasi terhadap pendidikan agama Islam dalam naungan YPPAI Bahrul Ulum Tajinan. Selain pondok pesantren dan TPQ sebagai lembaga pendidikan non formal, beberapa lembaga pendidikan formal seperti TK, MI, MTs, dan MA juga menjadi fokus kami. 
-Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi Cerdas, disiplin, berakhlakul Karimah.
-          </p>
-        </div>
-        </div>
-      </div>
-    </div>
-
-    {{-- Berita --}}
     <div class="container-lg" style="background-color: white; padding-top: 70px; padding-bottom: 100px;">
       <div class="container py-2 pb-5">
         <div class="row">
-          <h1 class="display-3 fontJumbotron text-center pb-5"  onclick="location.href='{{url('listberita')}}';" style="cursor: pointer;">
-            Berita & Kegiatan
+          <h1 class="display-3 fontJumbotron text-center pb-5">
+            Berita
           </h1>
           <div class="col-12">
-            <div class="responsive">
-              @foreach($data as $row)
-              <div class="card" onclick="location.href='{{url('berita', $row->id)}}';" style="cursor: pointer;">
-                <img loading="lazy" class="card-img-top" src="{{asset('img/'.$row->berita_cover)}}" style="width: 300px !important; height: 150px !important; object-fit: cover !important;" alt="{{asset('storage/'.$row->berita_cover)}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron text-center">{{$row->berita_judul}}</span>
-                </div>
-                 <p class="selector" style="margin:10px;">Klik untuk membaca...</p>
+              
+              <div class="row">
+                  @foreach($data as $row)
+                  <div class="col-12">
+                  <div class="card mb-3 mx-auto" style="max-width: 540px;"  onclick="location.href='{{url('berita', $row->id)}}';" style="cursor: pointer;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="{{asset('img/'.$row->berita_cover)}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{$row->berita_judul}}</h5>
+                            <p class="card-text"><small class="text-muted">Klik untuk baca selengkapnya</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  @endforeach
               </div>
-              @endforeach
-            </div>
+             
           </div>
         </div>
-      </div>
-    </div>
-
-    {{-- Program Kami --}}
-    <div class="container-fluid py-5 py-lg-5" style="background-color: #C4C4C4;">
-      <div class="container py-0 py-lg-5">
-        <div class="row align-items-center  py-0 py-lg-5">
-          <div class="col-lg-4 col-12">
-            <h1 class="display-3 fontJumbotron text-lg-start text-center">Program Kami</h1>
-          </div>
-          <div style="
-          margin-left: -20px" class="col-lg-8 col-12">
-            <div class="program-kami">
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {{-- Kata Mereka --}}
-    <div class="container-fluid pt-3 pb-5 " style="background-color: #CDEEC8;">
-      <h1 class="fontJumbotron display-3 text-center my-5 py-5">Kata mereka</h1>
-      <div class="kata-mereka container col-12 pb-5 mb-5">
-        @foreach($data2 as $row)
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-5 col-12 align-self-center text-center">
-                <div class="avatar rounded-2 text-center" href="javascript:void(0)">
-                  <img loading="lazy" class="rounded-3 mx-auto text-center" width="130px" src="{{asset('img/'.$row->foto)}}" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-lg-7 col-12 align-self-center">
-                <p class="fontJumbotronUp text-center fontUpJumbotron">{{$row->kata}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center py-3">
-            <span class="fontNameTesti">{{$row->nama}}</span>
-          </div>
-        </div>
-        @endforeach
       </div>
     </div>
 
@@ -249,7 +151,12 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
         </div>
         <div class="col-lg-2 col-12 px-3 py-lg-1 py-5">
           <div class="row justify-content-center">
-            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Ulasan tentang kami</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">Home</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">TK</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SD</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SMP</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="">SMA</a></col-12>
+            <col-12 class="text-lg-start text-center my-1"><a class="fontNavFooter" href="{{url('feedback')}}">Feedback</a></col-12>
           </div>
         </div>
         <div class="col-lg-5 col-12 px-3">
@@ -432,4 +339,3 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
     
   </body>
 </html>
-

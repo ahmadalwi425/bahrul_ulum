@@ -30,6 +30,7 @@ Route::get('/pendaftaran/ma', [App\Http\Controllers\pendaftaranController::class
 Route::get('/modal', [App\Http\Controllers\pendaftaranController::class, 'modal']);
 Route::get('/menu/{id}', [App\Http\Controllers\nonauthController::class, 'indexMenu']);
 Route::get('/berita/{id}', [App\Http\Controllers\nonauthController::class, 'indexBerita']);
+Route::get('/listberita', [App\Http\Controllers\nonauthController::class, 'listBerita']);
 Route::get('admin/pendaftaran/{id}', [App\Http\Controllers\adminController::class, 'showPendaftaran']);
 Route::get('/siswa/{id}', [App\Http\Controllers\adminController::class, 'showSiswa']);
 Route::get('/siswa/hapus/{id}', [App\Http\Controllers\adminController::class, 'hapusSiswa']);
@@ -64,3 +65,9 @@ Route::get('/admin/kata_mereka', [App\Http\Controllers\kata_merekaController::cl
 Route::get('/admin/kata_mereka/verify/{id}', [App\Http\Controllers\kata_merekaController::class, 'verify']);
 Route::get('/admin/kata_mereka/unverify/{id}', [App\Http\Controllers\kata_merekaController::class, 'unverify']);
 Route::get('/admin/kata_mereka/destroy/{id}', [App\Http\Controllers\kata_merekaController::class, 'destroy']);
+
+// banner
+Route::get('/admin/banner', [App\Http\Controllers\adminController::class, 'banner']);
+
+// program kami
+Route::get('/admin/program', [App\Http\Controllers\adminController::class, 'program']);

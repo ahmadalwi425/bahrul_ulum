@@ -14,12 +14,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset('css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.css')}}" type="text/css">
   <link href="{{asset('argon-icon/css/nucleo-icons.css')}}" rel="stylesheet" />
   <link href="{{asset('argon-icon/css/nucleo-svg.css')}}" rel="stylesheet" />
   {{-- <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css"> --}}
-  <!-- Page plugins -->
-  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Own CSS -->
   <link rel="stylesheet" href="{{asset('css/adminCss.css')}}">
 
@@ -136,6 +134,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="{{url('admin/berita')}}">
         <i class="fa fa-quote-right text-blue"></i>
         <span class="nav-link-text">Berita</span>
@@ -173,6 +183,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="{{url('admin/berita')}}">
         <i class="fa fa-quote-right text-blue"></i>
         <span class="nav-link-text">Berita</span>
@@ -207,6 +229,116 @@
       <a class="nav-link" href="{{url('admin/lembaga')}}">
         <i class="fa fa-university text-red"></i>
         <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
+      </a>
+    </li>
+    @elseif($nav == "banner")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-primary"></i>
+        <span class="nav-link-text text-dark">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/banner')}}">
+        <i class="fa fa-album-2 text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/berita')}}">
+        <i class="fa fa-quote-right text-blue"></i>
+        <span class="nav-link-text">Berita</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/kata_mereka')}}">
+        <i class="fa fa-comment text-green"></i>
+        <span class="nav-link-text">Kata Mereka</span>
+      </a>
+    </li>
+    @elseif($nav == "program")
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('dashboard')}}">
+        <i class="ni ni-tv-2 text-primary"></i>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/siswa')}}">
+        <i class="ni ni-single-02 text-yellow"></i>
+        <span class="nav-link-text">Siswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/pendaftaran')}}">
+        <i class="fa fa-users text-primary"></i>
+        <span class="nav-link-text text-dark">Pendaftar</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/lembaga')}}">
+        <i class="fa fa-university text-red"></i>
+        <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-album-2 text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
       </a>
     </li>
     <li class="nav-item">
@@ -284,6 +416,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link active" href="{{url('admin/berita')}}">
         <i class="fa fa-quote-right text-red"></i>
         <span class="nav-link-text text-dark">Berita</span>
@@ -318,6 +462,18 @@
       <a class="nav-link" href="{{url('admin/lembaga')}}">
         <i class="fa fa-university text-red"></i>
         <span class="nav-link-text">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
       </a>
     </li>
     <li class="nav-item">
@@ -607,7 +763,7 @@
     
     <!-- Argon Scripts -->
     <!-- Core -->
-    <script src="{{asset('js/jquery-3.6.0.min.js')}}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{asset('js/jquery-3.6.0.min.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/js.cookie.js')}}"></script>
     <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>

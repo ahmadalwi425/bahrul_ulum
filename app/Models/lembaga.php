@@ -10,6 +10,7 @@ class lembaga extends Model
 {
     use HasFactory;
     protected $table = 'lembaga';
+    protected $guarded = [];
     public function menu(){
         return $this->hasMany(menu::class, 'id');
     }

@@ -21,7 +21,12 @@ class nonauthController extends Controller
     {
         $data = berita::where('id',$id)->first();
         $nav = "menu";
-        return view('menu',compact('data','nav'));
+        return view('berita',compact('data','nav'));
+    }
+    public function listBerita()
+    {
+        $data = berita::all();
+        return view('listBerita',compact('data'));
     }
     public function index()
     {
