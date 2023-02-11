@@ -271,7 +271,7 @@
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/pendaftaran')}}">
         <i class="fa fa-users text-primary"></i>
-        <span class="nav-link-text text-dark">Pendaftar</span>
+        <span class="nav-link-text">Pendaftar</span>
       </a>
     </li>
     <li class="nav-item">
@@ -282,8 +282,8 @@
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="{{url('admin/banner')}}">
-        <i class="fa fa-album-2 text-yellow"></i>
-        <span class="nav-link-text">Banner</span>
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text text-dark">Banner</span>
       </a>
     </li>
     <li class="nav-item">
@@ -320,7 +320,7 @@
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/pendaftaran')}}">
         <i class="fa fa-users text-primary"></i>
-        <span class="nav-link-text text-dark">Pendaftar</span>
+        <span class="nav-link-text">Pendaftar</span>
       </a>
     </li>
     <li class="nav-item">
@@ -331,14 +331,14 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/banner')}}">
-        <i class="fa fa-album-2 text-yellow"></i>
+        <i class="fa fa-image text-yellow"></i>
         <span class="nav-link-text">Banner</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="{{url('admin/program')}}">
-        <i class="ni ni-bullet-list-67 text-white"></i>
-        <span class="nav-link-text">Program Kami</span>
+        <i class="ni ni-bullet-list-67 text-primary"></i>
+        <span class="nav-link-text  text-dark">Program Kami</span>
       </a>
     </li>
     <li class="nav-item">
@@ -376,6 +376,18 @@
       <a class="nav-link active" href="{{url('admin/lembaga')}}">
         <i class="fa fa-university text-red"></i>
         <span class="nav-link-text text-dark">Lembaga</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/banner')}}">
+        <i class="fa fa-image text-yellow"></i>
+        <span class="nav-link-text">Banner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/program')}}">
+        <i class="ni ni-bullet-list-67 text-white"></i>
+        <span class="nav-link-text">Program Kami</span>
       </a>
     </li>
     <li class="nav-item">

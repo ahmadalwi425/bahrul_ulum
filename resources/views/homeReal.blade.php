@@ -322,7 +322,10 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
     <script>
       // carousel jumbotron
       $(document).ready(function(){
-        $('.your-class').slick();
+        $('.your-class').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
       });
 
       // carousel berita terkini
@@ -332,7 +335,8 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 3,
-        
+        autoplay: true,
+            autoplaySpeed: 2000,
         responsive: [
           {
             breakpoint: 1024,
@@ -371,6 +375,8 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
         variableWidth: true,
         arrows:true,
         dots: true, 
+        autoplay: true,
+            autoplaySpeed: 2000,
         responsive: [
           {
             breakpoint: 768,
@@ -398,6 +404,8 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
         centerMode: false,
         centerPadding: '30px',
         slidesToShow: 3,
+        autoplay: true,
+            autoplaySpeed: 2000,
         responsive: [
           {
             breakpoint: 768,
