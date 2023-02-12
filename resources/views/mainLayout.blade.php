@@ -78,14 +78,13 @@
     </script>
     
     <script>
-          var delay = 3000;
+          var delay = 1500;
  
             $(window).on('load', function() {
                 setTimeout(function(){
-                    $("#loading").hide();
+                    $("#loading").fadeOut(300, function() { $(this).remove(); });
                 },delay);
             });
-          
       </script>
 
     <title>Pondok Pesantren Bahrul Ulum - Homepage</title>
