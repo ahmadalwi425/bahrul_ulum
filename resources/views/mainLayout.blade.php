@@ -23,6 +23,51 @@
 
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
     
+    <style>
+        .lds-ring {
+          display: inline-block;
+          position: relative;
+          width: 80px;
+          height: 80px;
+        }
+        .lds-ring div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border: 8px solid #fff;
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #fff transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+          animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+          animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+          animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+    </style>
+   
+    
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
+    
+    <!-- jquery -->
+    <script src="{{asset('js/jquery.js')}}" ></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cuttr/1.3.2/cuttr.min.js"></script>
     
     <script>
@@ -31,11 +76,27 @@
           ending: '...'
         });
     </script>
+    
+    <script>
+          var delay = 3000;
+ 
+            $(window).on('load', function() {
+                setTimeout(function(){
+                    $("#loading").hide();
+                },delay);
+            });
+          
+      </script>
 
     <title>Pondok Pesantren Bahrul Ulum - Homepage</title>
   </head>
   <body>
-
+      <div id="loading" class="text-center row justify-content-center align-items-center" style=" position:absolute; width:100%; height:120%; background-color: #609C56; z-index:98">
+          <div class="col">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
+      </div>
+      
     {{-- Navbar --}}
     <nav style="z-index: 99; padding:4px" class="fontNavbar navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container d-flex justify-content-between">
@@ -149,7 +210,7 @@
       <!-- Optional JavaScript; choose one of the two! -->
   
       <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script src="{{asset('js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
+      
   
       <!-- Option 2: Separate Popper and Bootstrap JS -->
       <!--
@@ -157,8 +218,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
       -->
   
-      <!-- jquery -->
-      <script src="{{asset('js/jquery.js')}}" ></script>
+      
       {{-- swiper --}}
       <script src="{{asset('js/owl.carousel.js')}}"></script>
       <script src="{{asset('js/owl.carousel.min.js')}}"></script>
