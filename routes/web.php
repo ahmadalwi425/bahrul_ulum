@@ -55,19 +55,24 @@ Route::get('/admin/menu/edit/{id}', [App\Http\Controllers\menuController::class,
 Route::get('/admin/menu/destroy/{id}', [App\Http\Controllers\menuController::class, 'destroy']);
 Route::post('/admin/menu/store', [App\Http\Controllers\menuController::class, 'store']);
 Route::put('/admin/menu/update/{id}', [App\Http\Controllers\menuController::class, 'update']);
-Route::get('/admin/berita', [App\Http\Controllers\beritaController::class, 'index']);
-Route::get('/admin/berita/create', [App\Http\Controllers\beritaController::class, 'create']);
-Route::post('/admin/berita/store', [App\Http\Controllers\beritaController::class, 'store']);
-Route::get('/admin/berita/edit/{id}', [App\Http\Controllers\beritaController::class, 'edit']);
-Route::put('/admin/berita/update/{id}', [App\Http\Controllers\beritaController::class, 'update']);
-Route::get('/admin/berita/destroy/{id}', [App\Http\Controllers\beritaController::class, 'destroy']);
+Route::get('/admin/program', [App\Http\Controllers\programController::class, 'index']);
+Route::get('/admin/program/create', [App\Http\Controllers\programController::class, 'create']);
+Route::post('/admin/program/store', [App\Http\Controllers\programController::class, 'store']);
+Route::get('/admin/program/edit/{id}', [App\Http\Controllers\programController::class, 'edit']);
+Route::put('/admin/program/update/{id}', [App\Http\Controllers\programController::class, 'update']);
+Route::get('/admin/program/destroy/{id}', [App\Http\Controllers\programController::class, 'destroy']);
 Route::get('/admin/kata_mereka', [App\Http\Controllers\kata_merekaController::class, 'index']);
 Route::get('/admin/kata_mereka/verify/{id}', [App\Http\Controllers\kata_merekaController::class, 'verify']);
 Route::get('/admin/kata_mereka/unverify/{id}', [App\Http\Controllers\kata_merekaController::class, 'unverify']);
 Route::get('/admin/kata_mereka/destroy/{id}', [App\Http\Controllers\kata_merekaController::class, 'destroy']);
+Route::get('/admin/banner', [App\Http\Controllers\bannerController::class, 'index']);
+Route::get('/admin/banner/create', [App\Http\Controllers\bannerController::class, 'create']);
+Route::post('/admin/banner/store', [App\Http\Controllers\bannerController::class, 'store']);
+Route::get('/admin/banner/edit/{id}', [App\Http\Controllers\bannerController::class, 'edit']);
+Route::put('/admin/banner/update/{id}', [App\Http\Controllers\bannerController::class, 'update']);
+Route::get('/admin/banner/destroy/{id}', [App\Http\Controllers\bannerController::class, 'destroy']);
+// // banner
+// Route::get('/admin/banner', [App\Http\Controllers\adminController::class, 'banner']);
 
-// banner
-Route::get('/admin/banner', [App\Http\Controllers\adminController::class, 'banner']);
-
-// program kami
-Route::get('/admin/program', [App\Http\Controllers\adminController::class, 'program']);
+// // program kami
+// // Route::get('/admin/program', [App\Http\Controllers\adminController::class, 'program']);
