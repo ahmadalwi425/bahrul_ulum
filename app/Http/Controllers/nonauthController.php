@@ -8,6 +8,8 @@ use App\Models\berita;
 use App\Models\lembaga;
 use App\Models\kata_mereka;
 use Carbon\Carbon;
+use App\Models\banner;
+use App\Models\program;
 
 class nonauthController extends Controller
 {
@@ -30,9 +32,12 @@ class nonauthController extends Controller
     }
     public function index()
     {
+        $dataProgram = program::orderBy('date','DESC')->where('is_visible',1)->get();
+        $dataBanner = banner::orderBy('date','DESC')->where('is_visible',1)->get();
         $data = berita::get();
         $data2 = kata_mereka::where('status','verified')->get();
-        return view('homeReal',compact('data','data2'));
+        // dd($dataProgram);
+        return view('homeReal',compact('data','data2','dataProgram','dataBanner'));
     }
     public function registrasi($id)
     {
