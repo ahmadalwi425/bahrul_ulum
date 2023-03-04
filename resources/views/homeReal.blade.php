@@ -9,9 +9,11 @@
       <div style="padding: 0; padding-top: 40px; background-color: #CDEEC8;" class="container mt-7">
           <div class="col-12">
               <div class="your-class">
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 1.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 1.jpg')}}"></div>
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
-                <div><img loading="lazy" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div>
+                @foreach($dataBanner as $row)
+                <div><img loading="lazy" src="{{asset('img_banner/'.$row->banner_image)}}" class="d-block w-100" alt=""></div>
+                @endforeach
+                {{-- <div><img loading="lazy" src="{{asset('storage/img/homepage 2.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 2.jpg')}}"></div>
+                <div><img loading="lazy" src="{{asset('storage/img/homepage 3.jpg')}}" class="d-block w-100" alt="{{asset('storage/img/homepage 3.jpg')}}"></div> --}}
               </div>
           </div>
       </div>
@@ -73,36 +75,14 @@ Pondok Pesantren Bahrul Ulum Tajinan senantiasa berupaya untuk mencetak generasi
           <div style="
           margin-left: -20px" class="col-lg-8 col-12">
             <div class="program-kami">
+              @foreach($dataProgram as $row)
               <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
+                <img loading="lazy" class="card-img-top" style="" src="{{asset('img_program/' . $row->program_cover )}}"alt="{{asset('img_program/' . $row->program_cover )}}">
                 <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
+                  <span class="fontUpJumbotron">{{ $row->program_judul }}</span>
                 </div>
               </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
-              <div class="card border-0" onclick="location.href='newurl.html';">
-                <img loading="lazy" class="card-img-top" style="" src="{{asset('storage/img/homepage 1.jpg')}}"alt="{{asset('storage/img/homepage.jpg')}}">
-                <div class="card-footer text-center py-3">
-                  <span class="fontUpJumbotron">PPDB 2021</span>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>

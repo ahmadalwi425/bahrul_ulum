@@ -7,12 +7,12 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-3">kata mereka</h6>
+            <h6 class="h2 text-white d-inline-block mb-3">Program Kami</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item">
                   <a href="{{url('/admin')}}"><i class="fa fa-home text-primary"></i> Dashboard</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">pendaftaran</li>
+                  <li class="breadcrumb-item active" aria-current="page">Program</li>
               </ol>
             </nav>
           </div>
@@ -36,7 +36,7 @@
             <div class="mb-0 pb-0 row justify-content-between">
               <h3 class="mb-0 col-5 col-lg-2 text-lg-left">Tables</h3>
               <div class="search-place col-7 text-lg-left text-center"></div>
-              <!-- <button type="button" data-toggle="modal" data-target="#create" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
+              <a href="{{url('/admin/program/create')}}" type="button" class="btn-success btn col-lg-2 col-12 mt-3 mt-lg-0 mb-0">
                 <div class="row justify-content-center align-items-center">
                   
                   <div class="col-1 ml--2">
@@ -46,7 +46,7 @@
                     <span class="d-inline-block pt--4">Tambah</span>
                   </div>
                 </div>
-              </button> -->
+              </a>
             </div>
             <br>
           </div>
@@ -57,37 +57,24 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name">No</th>
-                    <th scope="col" class="sort" data-sort="name">Nama</th>
-                    <th scope="col" class="sort" data-sort="completion">Foto</th>
-                    <th scope="col" class="sort" data-sort="completion">Feedback</th>
-                    <th scope="col" class="sort" data-sort="completion">Status</th>
+                    <th scope="col" class="sort" data-sort="name">Nama Program</th>
+                    <th scope="col" class="sort" data-sort="completion">Gambar</th>
                     <th scope="col" class="sort" data-sort="completion">Change Status</th>
                   </tr>
                 </thead>
                 <tbody class="list">                    
-                    {{-- @foreach($data as $row)
-                    <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$row->nama}}</td>
-                        <td><img src="{{asset('storage/'.$row->foto)}}" alt="" style="width:200px;height:100px;"></td>
-                        <td>{{$row->kata}}</td>
-                        <td>{{$row->status}}</td>
-                        <td>
-                        @if($row->status == "unverified")
-                        <a href="{{ url('admin/kata_mereka/verify',$row->id) }}" class="badge badge-dot mr-4">
-                            <button class="btn btn-success" type="button"><i class="fa fa-check text-white mt--2 mr-3"></i> Verify</button>
-                        </a>
-                        @else
-                        <a href="{{ url('admin/kata_mereka/unverify',$row->id) }}" class="badge badge-dot mr-4">
-                            <button class="btn btn-warning" type="button"><i class="fa fa-times text-white mt--2 mr-3"></i> Un-Verify</button>
-                        </a>
-                        @endif
-                        <a href="{{ url('admin/kata_mereka/destroy',$row->id) }}" class="badge badge-dot mr-4">
-                            <button class="btn btn-danger" type="button"><i class="fa fa-trash text-white mt--2 mr-3"></i> Delete</button>
-                        </a>
-                    </td>
-                    </tr>
-                    @endforeach --}}
+                  @foreach($data as $row)
+                  <tr>
+                      <td>{{$loop->iteration}}</td>
+                      <td>{{$row->program_judul}}</td>
+                      <td><img src="{{asset('img_program/'.$row->program_cover)}}" alt="" style="width:200px;height:100px;"></td>
+                      <td>
+                      <a href="{{ url('admin/banner/destroy',$row->id) }}" class="badge badge-dot mr-4">
+                          <button class="btn btn-danger" type="button"><i class="fa fa-trash text-white mt--2 mr-3"></i> Delete</button>
+                      </a>
+                  </td>
+                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
